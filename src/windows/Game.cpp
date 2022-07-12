@@ -29,3 +29,40 @@ Game::~Game() {
         }
     }
 }
+void Game::addWalls(int wallWidth, int wallHeight) {
+    for (int i = 0; i < numOfWalls; ++i) {
+        for (int j = 0; j < numOfWalls; ++j) {
+            if (i != 0 && i != numOfWalls - 1 && j != 0 && j != numOfWalls - 1 && (j % 2 != 0 || i % 2 != 0))
+                continue;
+            wall[i][j] = new Wall(wallWidth, wallHeight);
+            scene->addItem(wall[i][j]);
+            wall[i][j]->setPos(wallWidth * i, wallHeight * j);
+        }
+    }
+}
+
+void Game::addBoxes(int boxWidth, int boxHeight) {
+    int boxPosition[130][2];
+    setBoxPosition(boxPosition);
+    for (int i = 0; i < numOfBoxes; ++i) {
+        int x = boxPosition[i][0];
+        int y = boxPosition[i][1];
+        box[x][y] = new class Box(boxWidth, boxHeight);
+        scene->addItem(box[x][y]);
+        box[x][y]->setPos(boxWidth * x, boxHeight * y);
+    }
+}
+
+void Game::setBoxPosition(int boxPosition[15][2]) {
+    srand(time(nullptr));
+    for (int i = 0; i < numOfBoxes; ++i) {
+        int x = (rand() + 1) % (numOfWalls - 1) + 1;
+        int y = (rand() + x) % (numOfWalls - 1) + 1;
+        if (x != 0 && x != numOfWalls - 1 && y != 0 && y != numOfWalls - 1 && (y % 2 != 0 || x % 2 != 0) &&
+            !(x == (numOfWalls - 2) && y == (numOfWalls - 2)) && !(x == 1 && y == 1)) {
+            boxPosition[i][0] = x;
+            boxPosition[i][1] = y;
+        } else
+            i--;
+    }
+}
