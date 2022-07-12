@@ -147,6 +147,12 @@
 		<Unit filename="D:/reza/uni/term 2/ap/takalif/projectmain/resources.qrc">
 			<Option target="Playing_With_Fire_2"/>
 		</Unit>
+		<Unit filename="D:/reza/uni/term 2/ap/takalif/projectmain/src/views/Button.cpp">
+			<Option target="Playing_With_Fire_2"/>
+		</Unit>
+		<Unit filename="D:/reza/uni/term 2/ap/takalif/projectmain/src/views/Button.h">
+			<Option target="Playing_With_Fire_2"/>
+		</Unit>
 		<Unit filename="D:/reza/uni/term 2/ap/takalif/projectmain/src/views/Label.cpp">
 			<Option target="Playing_With_Fire_2"/>
 		</Unit>
@@ -157,6 +163,12 @@
 			<Option target="Playing_With_Fire_2"/>
 		</Unit>
 		<Unit filename="D:/reza/uni/term 2/ap/takalif/projectmain/src/views/TextField.h">
+			<Option target="Playing_With_Fire_2"/>
+		</Unit>
+		<Unit filename="D:/reza/uni/term 2/ap/takalif/projectmain/src/windows/Game.cpp">
+			<Option target="Playing_With_Fire_2"/>
+		</Unit>
+		<Unit filename="D:/reza/uni/term 2/ap/takalif/projectmain/src/windows/Game.h">
 			<Option target="Playing_With_Fire_2"/>
 		</Unit>
 		<Unit filename="D:/reza/uni/term 2/ap/takalif/projectmain/src/windows/Home.cpp">

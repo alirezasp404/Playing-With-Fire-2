@@ -120,11 +120,26 @@ CMakeFiles/Playing_With_Fire_2.dir/src/windows/Home.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Playing_With_Fire_2.dir/src/windows/Home.cpp.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\reza\uni\term 2\ap\takalif\projectmain\src\windows\Home.cpp" -o CMakeFiles\Playing_With_Fire_2.dir\src\windows\Home.cpp.s
 
+CMakeFiles/Playing_With_Fire_2.dir/src/windows/Game.cpp.obj: CMakeFiles/Playing_With_Fire_2.dir/flags.make
+CMakeFiles/Playing_With_Fire_2.dir/src/windows/Game.cpp.obj: CMakeFiles/Playing_With_Fire_2.dir/includes_CXX.rsp
+CMakeFiles/Playing_With_Fire_2.dir/src/windows/Game.cpp.obj: ../src/windows/Game.cpp
+CMakeFiles/Playing_With_Fire_2.dir/src/windows/Game.cpp.obj: CMakeFiles/Playing_With_Fire_2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\reza\uni\term 2\ap\takalif\projectmain\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Playing_With_Fire_2.dir/src/windows/Game.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Playing_With_Fire_2.dir/src/windows/Game.cpp.obj -MF CMakeFiles\Playing_With_Fire_2.dir\src\windows\Game.cpp.obj.d -o CMakeFiles\Playing_With_Fire_2.dir\src\windows\Game.cpp.obj -c "D:\reza\uni\term 2\ap\takalif\projectmain\src\windows\Game.cpp"
+
+CMakeFiles/Playing_With_Fire_2.dir/src/windows/Game.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Playing_With_Fire_2.dir/src/windows/Game.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\reza\uni\term 2\ap\takalif\projectmain\src\windows\Game.cpp" > CMakeFiles\Playing_With_Fire_2.dir\src\windows\Game.cpp.i
+
+CMakeFiles/Playing_With_Fire_2.dir/src/windows/Game.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Playing_With_Fire_2.dir/src/windows/Game.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\reza\uni\term 2\ap\takalif\projectmain\src\windows\Game.cpp" -o CMakeFiles\Playing_With_Fire_2.dir\src\windows\Game.cpp.s
+
 CMakeFiles/Playing_With_Fire_2.dir/src/views/TextField.cpp.obj: CMakeFiles/Playing_With_Fire_2.dir/flags.make
 CMakeFiles/Playing_With_Fire_2.dir/src/views/TextField.cpp.obj: CMakeFiles/Playing_With_Fire_2.dir/includes_CXX.rsp
 CMakeFiles/Playing_With_Fire_2.dir/src/views/TextField.cpp.obj: ../src/views/TextField.cpp
 CMakeFiles/Playing_With_Fire_2.dir/src/views/TextField.cpp.obj: CMakeFiles/Playing_With_Fire_2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\reza\uni\term 2\ap\takalif\projectmain\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Playing_With_Fire_2.dir/src/views/TextField.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\reza\uni\term 2\ap\takalif\projectmain\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Playing_With_Fire_2.dir/src/views/TextField.cpp.obj"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Playing_With_Fire_2.dir/src/views/TextField.cpp.obj -MF CMakeFiles\Playing_With_Fire_2.dir\src\views\TextField.cpp.obj.d -o CMakeFiles\Playing_With_Fire_2.dir\src\views\TextField.cpp.obj -c "D:\reza\uni\term 2\ap\takalif\projectmain\src\views\TextField.cpp"
 
 CMakeFiles/Playing_With_Fire_2.dir/src/views/TextField.cpp.i: cmake_force
@@ -139,7 +154,7 @@ CMakeFiles/Playing_With_Fire_2.dir/src/views/Label.cpp.obj: CMakeFiles/Playing_W
 CMakeFiles/Playing_With_Fire_2.dir/src/views/Label.cpp.obj: CMakeFiles/Playing_With_Fire_2.dir/includes_CXX.rsp
 CMakeFiles/Playing_With_Fire_2.dir/src/views/Label.cpp.obj: ../src/views/Label.cpp
 CMakeFiles/Playing_With_Fire_2.dir/src/views/Label.cpp.obj: CMakeFiles/Playing_With_Fire_2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\reza\uni\term 2\ap\takalif\projectmain\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Playing_With_Fire_2.dir/src/views/Label.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\reza\uni\term 2\ap\takalif\projectmain\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Playing_With_Fire_2.dir/src/views/Label.cpp.obj"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Playing_With_Fire_2.dir/src/views/Label.cpp.obj -MF CMakeFiles\Playing_With_Fire_2.dir\src\views\Label.cpp.obj.d -o CMakeFiles\Playing_With_Fire_2.dir\src\views\Label.cpp.obj -c "D:\reza\uni\term 2\ap\takalif\projectmain\src\views\Label.cpp"
 
 CMakeFiles/Playing_With_Fire_2.dir/src/views/Label.cpp.i: cmake_force
@@ -150,11 +165,26 @@ CMakeFiles/Playing_With_Fire_2.dir/src/views/Label.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Playing_With_Fire_2.dir/src/views/Label.cpp.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\reza\uni\term 2\ap\takalif\projectmain\src\views\Label.cpp" -o CMakeFiles\Playing_With_Fire_2.dir\src\views\Label.cpp.s
 
+CMakeFiles/Playing_With_Fire_2.dir/src/views/Button.cpp.obj: CMakeFiles/Playing_With_Fire_2.dir/flags.make
+CMakeFiles/Playing_With_Fire_2.dir/src/views/Button.cpp.obj: CMakeFiles/Playing_With_Fire_2.dir/includes_CXX.rsp
+CMakeFiles/Playing_With_Fire_2.dir/src/views/Button.cpp.obj: ../src/views/Button.cpp
+CMakeFiles/Playing_With_Fire_2.dir/src/views/Button.cpp.obj: CMakeFiles/Playing_With_Fire_2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\reza\uni\term 2\ap\takalif\projectmain\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Playing_With_Fire_2.dir/src/views/Button.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Playing_With_Fire_2.dir/src/views/Button.cpp.obj -MF CMakeFiles\Playing_With_Fire_2.dir\src\views\Button.cpp.obj.d -o CMakeFiles\Playing_With_Fire_2.dir\src\views\Button.cpp.obj -c "D:\reza\uni\term 2\ap\takalif\projectmain\src\views\Button.cpp"
+
+CMakeFiles/Playing_With_Fire_2.dir/src/views/Button.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Playing_With_Fire_2.dir/src/views/Button.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\reza\uni\term 2\ap\takalif\projectmain\src\views\Button.cpp" > CMakeFiles\Playing_With_Fire_2.dir\src\views\Button.cpp.i
+
+CMakeFiles/Playing_With_Fire_2.dir/src/views/Button.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Playing_With_Fire_2.dir/src/views/Button.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\reza\uni\term 2\ap\takalif\projectmain\src\views\Button.cpp" -o CMakeFiles\Playing_With_Fire_2.dir\src\views\Button.cpp.s
+
 CMakeFiles/Playing_With_Fire_2.dir/Playing_With_Fire_2_autogen/EWIEGA46WW/qrc_resources.cpp.obj: CMakeFiles/Playing_With_Fire_2.dir/flags.make
 CMakeFiles/Playing_With_Fire_2.dir/Playing_With_Fire_2_autogen/EWIEGA46WW/qrc_resources.cpp.obj: CMakeFiles/Playing_With_Fire_2.dir/includes_CXX.rsp
 CMakeFiles/Playing_With_Fire_2.dir/Playing_With_Fire_2_autogen/EWIEGA46WW/qrc_resources.cpp.obj: Playing_With_Fire_2_autogen/EWIEGA46WW/qrc_resources.cpp
 CMakeFiles/Playing_With_Fire_2.dir/Playing_With_Fire_2_autogen/EWIEGA46WW/qrc_resources.cpp.obj: CMakeFiles/Playing_With_Fire_2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\reza\uni\term 2\ap\takalif\projectmain\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Playing_With_Fire_2.dir/Playing_With_Fire_2_autogen/EWIEGA46WW/qrc_resources.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="D:\reza\uni\term 2\ap\takalif\projectmain\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Playing_With_Fire_2.dir/Playing_With_Fire_2_autogen/EWIEGA46WW/qrc_resources.cpp.obj"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Playing_With_Fire_2.dir/Playing_With_Fire_2_autogen/EWIEGA46WW/qrc_resources.cpp.obj -MF CMakeFiles\Playing_With_Fire_2.dir\Playing_With_Fire_2_autogen\EWIEGA46WW\qrc_resources.cpp.obj.d -o CMakeFiles\Playing_With_Fire_2.dir\Playing_With_Fire_2_autogen\EWIEGA46WW\qrc_resources.cpp.obj -c "D:\reza\uni\term 2\ap\takalif\projectmain\cmake-build-debug\Playing_With_Fire_2_autogen\EWIEGA46WW\qrc_resources.cpp"
 
 CMakeFiles/Playing_With_Fire_2.dir/Playing_With_Fire_2_autogen/EWIEGA46WW/qrc_resources.cpp.i: cmake_force
@@ -170,8 +200,10 @@ Playing_With_Fire_2_OBJECTS = \
 "CMakeFiles/Playing_With_Fire_2.dir/Playing_With_Fire_2_autogen/mocs_compilation.cpp.obj" \
 "CMakeFiles/Playing_With_Fire_2.dir/main.cpp.obj" \
 "CMakeFiles/Playing_With_Fire_2.dir/src/windows/Home.cpp.obj" \
+"CMakeFiles/Playing_With_Fire_2.dir/src/windows/Game.cpp.obj" \
 "CMakeFiles/Playing_With_Fire_2.dir/src/views/TextField.cpp.obj" \
 "CMakeFiles/Playing_With_Fire_2.dir/src/views/Label.cpp.obj" \
+"CMakeFiles/Playing_With_Fire_2.dir/src/views/Button.cpp.obj" \
 "CMakeFiles/Playing_With_Fire_2.dir/Playing_With_Fire_2_autogen/EWIEGA46WW/qrc_resources.cpp.obj"
 
 # External object files for target Playing_With_Fire_2
@@ -180,8 +212,10 @@ Playing_With_Fire_2_EXTERNAL_OBJECTS =
 Playing_With_Fire_2.exe: CMakeFiles/Playing_With_Fire_2.dir/Playing_With_Fire_2_autogen/mocs_compilation.cpp.obj
 Playing_With_Fire_2.exe: CMakeFiles/Playing_With_Fire_2.dir/main.cpp.obj
 Playing_With_Fire_2.exe: CMakeFiles/Playing_With_Fire_2.dir/src/windows/Home.cpp.obj
+Playing_With_Fire_2.exe: CMakeFiles/Playing_With_Fire_2.dir/src/windows/Game.cpp.obj
 Playing_With_Fire_2.exe: CMakeFiles/Playing_With_Fire_2.dir/src/views/TextField.cpp.obj
 Playing_With_Fire_2.exe: CMakeFiles/Playing_With_Fire_2.dir/src/views/Label.cpp.obj
+Playing_With_Fire_2.exe: CMakeFiles/Playing_With_Fire_2.dir/src/views/Button.cpp.obj
 Playing_With_Fire_2.exe: CMakeFiles/Playing_With_Fire_2.dir/Playing_With_Fire_2_autogen/EWIEGA46WW/qrc_resources.cpp.obj
 Playing_With_Fire_2.exe: CMakeFiles/Playing_With_Fire_2.dir/build.make
 Playing_With_Fire_2.exe: C:/Qt/6.2.4/mingw_64/lib/libQt6Widgets.a
@@ -192,7 +226,7 @@ Playing_With_Fire_2.exe: C:/Qt/6.2.4/mingw_64/lib/libQt6Core.a
 Playing_With_Fire_2.exe: CMakeFiles/Playing_With_Fire_2.dir/linklibs.rsp
 Playing_With_Fire_2.exe: CMakeFiles/Playing_With_Fire_2.dir/objects1.rsp
 Playing_With_Fire_2.exe: CMakeFiles/Playing_With_Fire_2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="D:\reza\uni\term 2\ap\takalif\projectmain\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable Playing_With_Fire_2.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="D:\reza\uni\term 2\ap\takalif\projectmain\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable Playing_With_Fire_2.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Playing_With_Fire_2.dir\link.txt --verbose=$(VERBOSE)
 	"C:\Program Files\JetBrains\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe" -E make_directory "D:/reza/uni/term 2/ap/takalif/projectmain/cmake-build-debug/plugins/platforms/"
 	"C:\Program Files\JetBrains\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe" -E copy C:/Qt/6.2.4/mingw_64/plugins/platforms/qwindows.dll "D:/reza/uni/term 2/ap/takalif/projectmain/cmake-build-debug/plugins/platforms/"

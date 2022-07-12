@@ -325,4 +325,7 @@ CMakeFiles/Playing_With_Fire_2.dir/src/windows/Home.cpp.obj: \
  C:/Qt/6.2.4/mingw_64/include/QtCore/qstringconverter.h \
  C:/Qt/6.2.4/mingw_64/include/QtCore/qset.h \
  C:/Qt/6.2.4/mingw_64/include/QtCore/qcontiguouscache.h \
- C:/Qt/6.2.4/mingw_64/include/QtGui/qpainterpath.h
+ C:/Qt/6.2.4/mingw_64/include/QtGui/qpainterpath.h \
+ D:/reza/uni/term\ 2/ap/takalif/projectmain/src/views/Label.h \
+ D:/reza/uni/term\ 2/ap/takalif/projectmain/src/views/Button.h \
+ D:/reza/uni/term\ 2/ap/takalif/projectmain/src/windows/Game.h

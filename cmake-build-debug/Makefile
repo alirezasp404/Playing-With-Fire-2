@@ -213,6 +213,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Playing_With_Fire_2.dir\build.make CMakeFiles/Playing_With_Fire_2.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/views/Button.obj: src/views/Button.cpp.obj
+.PHONY : src/views/Button.obj
+
+# target to build an object file
+src/views/Button.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Playing_With_Fire_2.dir\build.make CMakeFiles/Playing_With_Fire_2.dir/src/views/Button.cpp.obj
+.PHONY : src/views/Button.cpp.obj
+
+src/views/Button.i: src/views/Button.cpp.i
+.PHONY : src/views/Button.i
+
+# target to preprocess a source file
+src/views/Button.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Playing_With_Fire_2.dir\build.make CMakeFiles/Playing_With_Fire_2.dir/src/views/Button.cpp.i
+.PHONY : src/views/Button.cpp.i
+
+src/views/Button.s: src/views/Button.cpp.s
+.PHONY : src/views/Button.s
+
+# target to generate assembly for a file
+src/views/Button.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Playing_With_Fire_2.dir\build.make CMakeFiles/Playing_With_Fire_2.dir/src/views/Button.cpp.s
+.PHONY : src/views/Button.cpp.s
+
 src/views/Label.obj: src/views/Label.cpp.obj
 .PHONY : src/views/Label.obj
 
@@ -261,6 +285,30 @@ src/views/TextField.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Playing_With_Fire_2.dir\build.make CMakeFiles/Playing_With_Fire_2.dir/src/views/TextField.cpp.s
 .PHONY : src/views/TextField.cpp.s
 
+src/windows/Game.obj: src/windows/Game.cpp.obj
+.PHONY : src/windows/Game.obj
+
+# target to build an object file
+src/windows/Game.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Playing_With_Fire_2.dir\build.make CMakeFiles/Playing_With_Fire_2.dir/src/windows/Game.cpp.obj
+.PHONY : src/windows/Game.cpp.obj
+
+src/windows/Game.i: src/windows/Game.cpp.i
+.PHONY : src/windows/Game.i
+
+# target to preprocess a source file
+src/windows/Game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Playing_With_Fire_2.dir\build.make CMakeFiles/Playing_With_Fire_2.dir/src/windows/Game.cpp.i
+.PHONY : src/windows/Game.cpp.i
+
+src/windows/Game.s: src/windows/Game.cpp.s
+.PHONY : src/windows/Game.s
+
+# target to generate assembly for a file
+src/windows/Game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Playing_With_Fire_2.dir\build.make CMakeFiles/Playing_With_Fire_2.dir/src/windows/Game.cpp.s
+.PHONY : src/windows/Game.cpp.s
+
 src/windows/Home.obj: src/windows/Home.cpp.obj
 .PHONY : src/windows/Home.obj
 
@@ -304,12 +352,18 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... src/views/Button.obj
+	@echo ... src/views/Button.i
+	@echo ... src/views/Button.s
 	@echo ... src/views/Label.obj
 	@echo ... src/views/Label.i
 	@echo ... src/views/Label.s
 	@echo ... src/views/TextField.obj
 	@echo ... src/views/TextField.i
 	@echo ... src/views/TextField.s
+	@echo ... src/windows/Game.obj
+	@echo ... src/windows/Game.i
+	@echo ... src/windows/Game.s
 	@echo ... src/windows/Home.obj
 	@echo ... src/windows/Home.i
 	@echo ... src/windows/Home.s
