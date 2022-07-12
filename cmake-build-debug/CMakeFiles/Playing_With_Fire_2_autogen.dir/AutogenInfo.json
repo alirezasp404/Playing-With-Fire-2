@@ -287,12 +287,27 @@
 		"C:/Qt/6.2.4/mingw_64/lib/cmake/Qt6Multimedia/Qt6MultimediaTargets.cmake",
 		"C:/Qt/6.2.4/mingw_64/lib/cmake/Qt6Multimedia/Qt6MultimediaTargets-relwithdebinfo.cmake",
 		"C:/Qt/6.2.4/mingw_64/lib/cmake/Qt6Multimedia/Qt6MultimediaAdditionalTargetInfo.cmake",
-		"C:/Qt/6.2.4/mingw_64/lib/cmake/Qt6Multimedia/Qt6MultimediaVersionlessTargets.cmake"
+		"C:/Qt/6.2.4/mingw_64/lib/cmake/Qt6Multimedia/Qt6MultimediaVersionlessTargets.cmake",
+		"D:/QT Projects/finalproject/Playing With Fire 2/resources.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "D:/QT Projects/finalproject/Playing With Fire 2",
 	"DEP_FILE" : "D:/QT Projects/finalproject/Playing With Fire 2/cmake-build-debug/Playing_With_Fire_2_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "Playing_With_Fire_2_autogen/timestamp",
-	"HEADERS" : [],
+	"HEADERS" : 
+	[
+		[
+			"D:/QT Projects/finalproject/Playing With Fire 2/src/views/TextField.h",
+			"MU",
+			"Z3L7HTGYLD/moc_TextField.cpp",
+			null
+		],
+		[
+			"D:/QT Projects/finalproject/Playing With Fire 2/src/windows/Home.h",
+			"MU",
+			"3LXPKN4LCA/moc_Home.cpp",
+			null
+		]
+	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "D:/QT Projects/finalproject/Playing With Fire 2/cmake-build-debug/Playing_With_Fire_2_autogen/include",
 	"MOC_COMPILATION_FILE" : "D:/QT Projects/finalproject/Playing With Fire 2/cmake-build-debug/Playing_With_Fire_2_autogen/mocs_compilation.cpp",
@@ -361,6 +376,16 @@
 	[
 		[
 			"D:/QT Projects/finalproject/Playing With Fire 2/main.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/QT Projects/finalproject/Playing With Fire 2/src/views/TextField.cpp",
+			"MU",
+			null
+		],
+		[
+			"D:/QT Projects/finalproject/Playing With Fire 2/src/windows/Home.cpp",
 			"MU",
 			null
 		]

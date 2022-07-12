@@ -134,4 +134,9 @@ Playing_With_Fire_2_autogen/timestamp: \
   CMakeFiles/3.22.3/CMakeRCCompiler.cmake \
   CMakeFiles/3.22.3/CMakeSystem.cmake \
   ../main.cpp \
+  ../resources.qrc \
+  ../src/views/TextField.cpp \
+  ../src/views/TextField.h \
+  ../src/windows/Home.cpp \
+  ../src/windows/Home.h \
   C:/Program\ Files/JetBrains/CLion\ 2021.3.3/bin/cmake/win/bin/cmake.exe

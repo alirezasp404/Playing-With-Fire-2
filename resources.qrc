@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="images">
+        <file alias="textbg">resources/images/textbg.png</file>
+    </qresource>
+</RCC>

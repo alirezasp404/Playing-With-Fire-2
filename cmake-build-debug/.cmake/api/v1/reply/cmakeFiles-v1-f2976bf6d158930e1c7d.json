@@ -1225,6 +1225,9 @@
 		{
 			"isExternal" : true,
 			"path" : "C:/Qt/6.2.4/mingw_64/lib/cmake/Qt6Multimedia/Qt6MultimediaVersionlessTargets.cmake"
+		},
+		{
+			"path" : "resources.qrc"
 		}
 	],
 	"kind" : "cmakeFiles",

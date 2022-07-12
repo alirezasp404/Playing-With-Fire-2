@@ -1,15 +1,19 @@
 # ninja log v5
-3	440	6793153180385735	build.ninja	ab377739e736d51e
-1	137	6793153147589923	D:/QT Projects/finalproject/Playing With Fire 2/cmake-build-debug/Playing_With_Fire_2_autogen/timestamp	e854b6f3066738b6
-1	137	6793153147589923	D:/QT Projects/finalproject/Playing With Fire 2/cmake-build-debug/Playing_With_Fire_2_autogen/mocs_compilation.cpp	e854b6f3066738b6
-1	137	6793153147589923	Playing_With_Fire_2_autogen/timestamp	e854b6f3066738b6
+3	440	6793160920755786	build.ninja	ab377739e736d51e
+5	104	6793160506342912	D:/QT Projects/finalproject/Playing With Fire 2/cmake-build-debug/Playing_With_Fire_2_autogen/timestamp	e854b6f3066738b6
+5	104	6793160506342912	D:/QT Projects/finalproject/Playing With Fire 2/cmake-build-debug/Playing_With_Fire_2_autogen/mocs_compilation.cpp	e854b6f3066738b6
+5	104	6793160506342912	Playing_With_Fire_2_autogen/timestamp	e854b6f3066738b6
 142	192	6793153148569941	CMakeFiles/Playing_With_Fire_2.dir/Playing_With_Fire_2_autogen/mocs_compilation.cpp.obj	ef938058488e6ae3
-1	137	6793153147589923	Playing_With_Fire_2_autogen/mocs_compilation.cpp	e854b6f3066738b6
-137	1312	6793153159759922	CMakeFiles/Playing_With_Fire_2.dir/main.cpp.obj	4f55b218bab11b6c
-1314	1542	6793153160735671	Playing_With_Fire_2.exe	febbd3c43f36c38
-9	118	6793153260533658	Playing_With_Fire_2_autogen/timestamp	e854b6f3066738b6
-9	118	6793153260533658	Playing_With_Fire_2_autogen/mocs_compilation.cpp	e854b6f3066738b6
-9	118	6793153260533658	D:/QT Projects/finalproject/Playing With Fire 2/cmake-build-debug/Playing_With_Fire_2_autogen/timestamp	e854b6f3066738b6
-9	118	6793153260533658	D:/QT Projects/finalproject/Playing With Fire 2/cmake-build-debug/Playing_With_Fire_2_autogen/mocs_compilation.cpp	e854b6f3066738b6
-120	1325	6793153272623642	CMakeFiles/Playing_With_Fire_2.dir/main.cpp.obj	4f55b218bab11b6c
-1325	1559	6793153273627745	Playing_With_Fire_2.exe	febbd3c43f36c38
+5	104	6793160506342912	Playing_With_Fire_2_autogen/mocs_compilation.cpp	e854b6f3066738b6
+106	1360	6793160518906326	CMakeFiles/Playing_With_Fire_2.dir/main.cpp.obj	4f55b218bab11b6c
+1284	1515	6793159748162871	Playing_With_Fire_2.exe	febbd3c43f36c38
+4	99	6793161023131608	Playing_With_Fire_2_autogen/timestamp	e854b6f3066738b6
+4	99	6793161023131608	Playing_With_Fire_2_autogen/mocs_compilation.cpp	e854b6f3066738b6
+4	99	6793161023131608	D:/QT Projects/finalproject/Playing With Fire 2/cmake-build-debug/Playing_With_Fire_2_autogen/timestamp	e854b6f3066738b6
+4	99	6793161023131608	D:/QT Projects/finalproject/Playing With Fire 2/cmake-build-debug/Playing_With_Fire_2_autogen/mocs_compilation.cpp	e854b6f3066738b6
+101	150	6793161023622069	Playing_With_Fire_2_autogen/EWIEGA46WW/qrc_resources.cpp	8c1f51b71fbda3b5
+101	150	6793161023622069	D:/QT Projects/finalproject/Playing With Fire 2/cmake-build-debug/Playing_With_Fire_2_autogen/EWIEGA46WW/qrc_resources.cpp	8c1f51b71fbda3b5
+158	212	6793161024262135	CMakeFiles/Playing_With_Fire_2.dir/Playing_With_Fire_2_autogen/EWIEGA46WW/qrc_resources.cpp.obj	cfbe7a30ba3adc49
+154	1528	6793161037412135	CMakeFiles/Playing_With_Fire_2.dir/src/windows/Home.cpp.obj	de85ea93d3e1935a
+150	1711	6793161039234933	CMakeFiles/Playing_With_Fire_2.dir/src/views/TextField.cpp.obj	d29c0c438eb2f78
+1711	1985	6793161040664934	Playing_With_Fire_2.exe	9c511e57985c4634
