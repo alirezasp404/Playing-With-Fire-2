@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.22)
+cmake_minimum_required(VERSION 3.21.1)
 project(Playing_With_Fire_2)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -15,7 +15,7 @@ find_package(Qt6 COMPONENTS
         Multimedia
         REQUIRED)
 
-add_executable(Playing_With_Fire_2 main.cpp src/windows/Home.cpp src/windows/Home.h src/views/TextField.cpp src/views/TextField.h resources.qrc)
+add_executable(Playing_With_Fire_2 main.cpp src/windows/Home.cpp src/windows/Home.h src/views/TextField.cpp src/views/TextField.h src/views/Label.cpp src/views/Label.h resources.qrc)
 target_link_libraries(Playing_With_Fire_2
         Qt::Core
         Qt::Gui
