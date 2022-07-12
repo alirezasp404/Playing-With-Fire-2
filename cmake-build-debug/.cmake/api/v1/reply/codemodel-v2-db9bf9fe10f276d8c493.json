@@ -41,7 +41,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Playing_With_Fire_2::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Playing_With_Fire_2-Debug-6b4bb9ac689937ac3777.json",
+					"jsonFile" : "target-Playing_With_Fire_2-Debug-c493ec96cda8756e6828.json",
 					"name" : "Playing_With_Fire_2",
 					"projectIndex" : 0
 				},
@@ -58,8 +58,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/reza/uni/term 2/ap/takalif/projectmain/cmake-build-debug",
-		"source" : "D:/reza/uni/term 2/ap/takalif/projectmain"
+		"build" : "D:/QT Projects/Playing-With-Fire-2-master/cmake-build-debug",
+		"source" : "D:/QT Projects/Playing-With-Fire-2-master"
 	},
 	"version" : 
 	{

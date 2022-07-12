@@ -1,5 +1,8 @@
 <RCC>
     <qresource prefix="images">
         <file alias="textbg">resources/images/textbg.png</file>
+        <file alias="homebg">resources/images/homebg.png</file>
+        <file alias="wall">resources/images/wall.png</file>
+        <file alias="box">resources/images/box.png</file>
     </qresource>
 </RCC>

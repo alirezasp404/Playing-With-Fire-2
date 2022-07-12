@@ -3,12 +3,17 @@
 #define PLAY_WITH_FIRE_2_HOME_H
 #include <QGraphicsView>
 #include "../views/TextField.h"
+#include "../views/Label.h"
+#include "../views/Button.h"
 
 class Home : public QGraphicsView{
 Q_OBJECT
 private:
     QGraphicsScene* scene;
     TextField* textField;
+    Label* firstLabel;
+    Label* secondLabel;
+    Button* button;
 public:
     Home();
     ~Home();

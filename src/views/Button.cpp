@@ -1,13 +1,10 @@
-//
-// Created by Reza on 7/12/2022.
-//
 
 #include "Button.h"
 #include <QFont>
 #include <QTextDocument>
 #include <QPainter>
 Button:: Button(int width,int height):width(width),height(height), QGraphicsTextItem(){
-    setDefaultTextColor(QColor("#585858"));
+    setDefaultTextColor(QColor("white"));
     QFont font;
     font.setPixelSize(23);
     font.setBold(true);

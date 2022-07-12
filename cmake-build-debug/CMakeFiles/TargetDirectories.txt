@@ -1,4 +1,4 @@
-D:/reza/uni/term 2/ap/takalif/projectmain/cmake-build-debug/CMakeFiles/Playing_With_Fire_2.dir
-D:/reza/uni/term 2/ap/takalif/projectmain/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/reza/uni/term 2/ap/takalif/projectmain/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-D:/reza/uni/term 2/ap/takalif/projectmain/cmake-build-debug/CMakeFiles/Playing_With_Fire_2_autogen.dir
+D:/QT Projects/Playing-With-Fire-2-master/cmake-build-debug/CMakeFiles/Playing_With_Fire_2.dir
+D:/QT Projects/Playing-With-Fire-2-master/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/QT Projects/Playing-With-Fire-2-master/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/QT Projects/Playing-With-Fire-2-master/cmake-build-debug/CMakeFiles/Playing_With_Fire_2_autogen.dir

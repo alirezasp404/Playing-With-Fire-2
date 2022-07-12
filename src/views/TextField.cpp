@@ -7,7 +7,7 @@
 #include <QStyleOptionGraphicsItem>
 #include <QStyle>
 TextField::TextField(int width, int height) : width(width), height(height), QGraphicsTextItem() {
-    setDefaultTextColor(QColor("#585858"));
+    setDefaultTextColor(QColor("white"));
     QFont font;
     font.setPixelSize(23);
     font.setBold(true);
