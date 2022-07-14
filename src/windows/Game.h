@@ -6,8 +6,13 @@
 #define PLAY_WITH_FIRE_2_GAME_H
 
 #include <QGraphicsView>
+#include <QString>
+#include <QFile>
 #include "../views/Wall.h"
 #include "../views/Box.h"
+#include "../views/Button.h"
+#include "../views/Label.h"
+
 
 class Game : public QGraphicsView {
     const int numOfWalls;
@@ -21,10 +26,13 @@ class Game : public QGraphicsView {
     void addBoxes(int width, int height);
 
     void setBoxPosition(int [][2]);
+    void showDetails(QString,QString,QString);
+    Button* Name1;
+    Button* Name2;
+    Button* Lives;
 
 public:
-    Game();
-
+    Game(QString,QString,QString );
     ~Game();
 };
 

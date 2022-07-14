@@ -1,25 +1,25 @@
 {
-	"BUILD_DIR" : "D:/QT Projects/Playing-With-Fire-2-master/cmake-build-debug/Playing_With_Fire_2_autogen",
-	"CMAKE_BINARY_DIR" : "D:/QT Projects/Playing-With-Fire-2-master/cmake-build-debug",
-	"CMAKE_CURRENT_BINARY_DIR" : "D:/QT Projects/Playing-With-Fire-2-master/cmake-build-debug",
-	"CMAKE_CURRENT_SOURCE_DIR" : "D:/QT Projects/Playing-With-Fire-2-master",
-	"CMAKE_SOURCE_DIR" : "D:/QT Projects/Playing-With-Fire-2-master",
-	"INCLUDE_DIR" : "D:/QT Projects/Playing-With-Fire-2-master/cmake-build-debug/Playing_With_Fire_2_autogen/include",
+	"BUILD_DIR" : "D:/New folder/cmake-build-debug/Playing_With_Fire_2_autogen",
+	"CMAKE_BINARY_DIR" : "D:/New folder/cmake-build-debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "D:/New folder/cmake-build-debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "D:/New folder",
+	"CMAKE_SOURCE_DIR" : "D:/New folder",
+	"INCLUDE_DIR" : "D:/New folder/cmake-build-debug/Playing_With_Fire_2_autogen/include",
 	"INPUTS" : 
 	[
-		"D:/QT Projects/Playing-With-Fire-2-master/resources/images/homebg.png",
-		"D:/QT Projects/Playing-With-Fire-2-master/resources/images/wall.png",
-		"D:/QT Projects/Playing-With-Fire-2-master/resources/images/box.png",
-		"D:/QT Projects/Playing-With-Fire-2-master/resources/images/textbg.png"
+		"D:/New folder/resources/images/homebg.png",
+		"D:/New folder/resources/images/wall.png",
+		"D:/New folder/resources/images/box.png",
+		"D:/New folder/resources/images/textbg.png"
 	],
-	"LOCK_FILE" : "D:/QT Projects/Playing-With-Fire-2-master/cmake-build-debug/CMakeFiles/Playing_With_Fire_2_autogen.dir/AutoRcc_resources_EWIEGA46WW_Lock.lock",
+	"LOCK_FILE" : "D:/New folder/cmake-build-debug/CMakeFiles/Playing_With_Fire_2_autogen.dir/AutoRcc_resources_EWIEGA46WW_Lock.lock",
 	"MULTI_CONFIG" : false,
 	"OPTIONS" : [ "-name", "resources" ],
 	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
 	"OUTPUT_NAME" : "qrc_resources.cpp",
 	"RCC_EXECUTABLE" : "C:/Qt/6.2.4/mingw_64/./bin/rcc.exe",
 	"RCC_LIST_OPTIONS" : [ "--list" ],
-	"SETTINGS_FILE" : "D:/QT Projects/Playing-With-Fire-2-master/cmake-build-debug/CMakeFiles/Playing_With_Fire_2_autogen.dir/AutoRcc_resources_EWIEGA46WW_Used.txt",
-	"SOURCE" : "D:/QT Projects/Playing-With-Fire-2-master/resources.qrc",
+	"SETTINGS_FILE" : "D:/New folder/cmake-build-debug/CMakeFiles/Playing_With_Fire_2_autogen.dir/AutoRcc_resources_EWIEGA46WW_Used.txt",
+	"SOURCE" : "D:/New folder/resources.qrc",
 	"VERBOSITY" : 0
 }

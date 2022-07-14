@@ -21,6 +21,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Playing_With_Fire_2.dir/src/windows/Game.cpp.obj.d"
   "CMakeFiles/Playing_With_Fire_2.dir/src/windows/Home.cpp.obj"
   "CMakeFiles/Playing_With_Fire_2.dir/src/windows/Home.cpp.obj.d"
+  "CMakeFiles/Playing_With_Fire_2.dir/src/windows/start.cpp.obj"
+  "CMakeFiles/Playing_With_Fire_2.dir/src/windows/start.cpp.obj.d"
   "CMakeFiles/Playing_With_Fire_2_autogen.dir/AutogenUsed.txt"
   "CMakeFiles/Playing_With_Fire_2_autogen.dir/ParseCache.txt"
   "Playing_With_Fire_2_autogen"

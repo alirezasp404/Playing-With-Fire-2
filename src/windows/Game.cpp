@@ -2,18 +2,19 @@
 #include "Game.h"
 #include<time.h>
 
-Game::Game() : QGraphicsView(), numOfWalls(15),numOfBoxes(130) {
+Game::Game(QString name1,QString name2,QString lives) : QGraphicsView(), numOfWalls(15),numOfBoxes(130) {
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     showFullScreen();
     scene = new QGraphicsScene(this);
     scene->setSceneRect(0, 0, width(), height());
-    scene->setBackgroundBrush(QColor("white"));
+    scene->setBackgroundBrush(QColor("black"));
     setScene(scene);
     int blockWidth = width() / numOfWalls;
     int blockHeight = height() / numOfWalls;
     addWalls(blockWidth, blockHeight);
     addBoxes(blockWidth, blockHeight);
+    showDetails(name1,name2,lives);
 }
 
 Game::~Game() {
@@ -28,6 +29,11 @@ Game::~Game() {
             delete box[i][j];
         }
     }
+    delete Name1;
+    delete Name2;
+    delete Lives;
+
+
 }
 void Game::addWalls(int wallWidth, int wallHeight) {
     for (int i = 0; i < numOfWalls; ++i) {
@@ -65,4 +71,16 @@ void Game::setBoxPosition(int boxPosition[15][2]) {
         } else
             i--;
     }
+}
+
+void Game::showDetails(QString firstName,QString secondName,QString numLives){
+    Name1 = new Button(200, 55);
+    Name1->setPlainText(firstName);
+    scene->addItem(Name1);
+    Name1->setPos(10, 10);
+
+    Name2 = new Button(200, 55);
+    Name2->setPlainText(secondName);
+    scene->addItem(Name2);
+    Name2->setPos(width() /2, 10);
 }

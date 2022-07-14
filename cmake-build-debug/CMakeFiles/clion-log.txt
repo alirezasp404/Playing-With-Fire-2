@@ -1,5 +1,5 @@
-"C:\Program Files\JetBrains\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S "D:\QT Projects\Playing-With-Fire-2-master" -B "D:\QT Projects\Playing-With-Fire-2-master\cmake-build-debug"
+"C:\Program Files\JetBrains\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "D:\New folder"
 -- Could NOT find WrapVulkanHeaders (missing: Vulkan_INCLUDE_DIR) 
 -- Configuring done
 -- Generating done
--- Build files have been written to: D:/QT Projects/Playing-With-Fire-2-master/cmake-build-debug
+-- Build files have been written to: D:/New folder/cmake-build-debug
