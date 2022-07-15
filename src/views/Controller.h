@@ -5,25 +5,14 @@
 
 #include "Player.h"
 #include <QKeyEvent>
-#include <QPropertyAnimation>
-#include <QObject>
-
-class Controller :public QObject,public QGraphicsPixmapItem{
-//Q_OBJECT
-//Q_PROPERTY(qreal width READ x WRITE setX);
-//private:
-//    QPropertyAnimation *heightAnimator;
-//
-//protected:
-//    void keyPressEvent(QKeyEvent *event) override;
-//
-//public:
-//    Controller();
-//    ~Controller();
-//void moveToRight();
-//void moveToLeft();
-//void moveToTop();
-//void moveToDown();
+class Controller :public QGraphicsPixmapItem{
+private:
+Player* player1;
+Player* player2;
+protected:
+    void keyPressEvent(QKeyEvent *event) override;
+public:
+    Controller(Player* player1,Player* player2);
 };
 
 

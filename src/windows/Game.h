@@ -10,6 +10,7 @@
 #include "../views/Button.h"
 #include "../views/Label.h"
 #include "../views/Player.h"
+#include "../views/Controller.h"
 
 
 class Game : public QGraphicsView {
@@ -23,6 +24,11 @@ private:
     QGraphicsScene *scene;
     Player *player1;
     Player *player2;
+    Controller *controller;
+    Button *name1;
+    Button *name2;
+    Button *lives;
+    Button *exitButton;
 
     void addWalls(int width, int height);
 
@@ -32,12 +38,8 @@ private:
 
     void setBoxPosition(int [][2]) const;
 
-    void showDetails( const QString&,const QString&, QString);
+    void showDetails(const QString &, const QString &, QString);
 
-    Button *name1;
-    Button *name2;
-    Button *lives;
-    Button *exitButton;
 
 public:
     Game(QString, QString, QString);

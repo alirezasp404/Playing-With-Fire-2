@@ -16,7 +16,8 @@ Game::Game(QString name1, QString name2, QString lives) : QGraphicsView(), numOf
     addBoxes(blockWidth, blockHeight);
     showDetails(name1, name2, lives);
     addPlayers(blockWidth, blockHeight);
-//    controller = new Controller();
+    controller = new Controller(player1,player2);
+    scene->addItem(controller);
 }
 
 Game::~Game() {
@@ -37,6 +38,7 @@ Game::~Game() {
     delete player1;
     delete player2;
     delete exitButton;
+    delete controller;
 }
 
 void Game::addWalls(int wallWidth, int wallHeight) {
@@ -86,7 +88,7 @@ void Game::showDetails(const QString &firstName, const QString &secondName, QStr
     name1 = new Button(200, 55);
     name1->setPlainText(firstName);
     scene->addItem(name1);
-    name1->setPos(106, 3);
+    name1->setPos(width()/15, 3);
     name2 = new Button(200, 55);
     name2->setPlainText(secondName);
     scene->addItem(name2);
@@ -99,17 +101,11 @@ void Game::showDetails(const QString &firstName, const QString &secondName, QStr
 
 }
 
-void Game::addPlayers(int width, int height) {
-    player1 = new Player(true, width / 2, 10);
-    player2 = new Player(false, width / 2, 10);
+void Game::addPlayers(int blockWidth, int blockHeight) {
+    player1 = new Player(":/images/player1", blockWidth , blockHeight,blockWidth+blockWidth/4,blockHeight+blockHeight/4);
+    player2 = new Player(":/images/player2", blockWidth, blockHeight,13*blockWidth+blockWidth/4,13*blockHeight+blockHeight/4);
     scene->addItem(player1);
     scene->addItem(player2);
-    player1->setPos(120, 60);
-    player1->positionX = 120;
-    player1->positionY = 60;
-    player2->setPos(1350, 742);
-    player2->positionX = 1350;
-    player2->positionY = 742;
 }
 
 void Game::exit() {
