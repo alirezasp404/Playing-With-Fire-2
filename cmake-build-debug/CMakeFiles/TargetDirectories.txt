@@ -1,5 +1,0 @@
-D:/New folder (2)/cmake-build-debug/CMakeFiles/Playing_With_Fire_2.dir
-D:/New folder (2)/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/New folder (2)/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-D:/New folder (2)/cmake-build-debug/CMakeFiles/Playing_With_Fire_2_autogen_timestamp_deps.dir
-D:/New folder (2)/cmake-build-debug/CMakeFiles/Playing_With_Fire_2_autogen.dir
