@@ -1,5 +1,5 @@
-D:/New\ folder/cmake-build-debug/Playing_With_Fire_2_autogen/Z3L7HTGYLD/moc_Button.cpp: D:/New\ folder/src/views/Button.h \
-  D:/New\ folder/cmake-build-debug/Playing_With_Fire_2_autogen/moc_predefs.h \
+D:/New\ folder\ (2)/cmake-build-debug/Playing_With_Fire_2_autogen/Z3L7HTGYLD/moc_Button.cpp: D:/New\ folder\ (2)/src/views/Button.h \
+  D:/New\ folder\ (2)/cmake-build-debug/Playing_With_Fire_2_autogen/moc_predefs.h \
   C:/Program\ Files/JetBrains/CLion\ 2021.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed/limits.h \
   C:/Program\ Files/JetBrains/CLion\ 2021.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed/syslimits.h \
   C:/Program\ Files/JetBrains/CLion\ 2021.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/algorithm \

@@ -1,5 +1,5 @@
-D:/New\ folder/cmake-build-debug/Playing_With_Fire_2_autogen/3LXPKN4LCA/moc_Home.cpp: D:/New\ folder/src/windows/Home.h \
-  D:/New\ folder/cmake-build-debug/Playing_With_Fire_2_autogen/moc_predefs.h \
+D:/New\ folder\ (2)/cmake-build-debug/Playing_With_Fire_2_autogen/3LXPKN4LCA/moc_Home.cpp: D:/New\ folder\ (2)/src/windows/Home.h \
+  D:/New\ folder\ (2)/cmake-build-debug/Playing_With_Fire_2_autogen/moc_predefs.h \
   C:/Program\ Files/JetBrains/CLion\ 2021.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed/limits.h \
   C:/Program\ Files/JetBrains/CLion\ 2021.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed/syslimits.h \
   C:/Program\ Files/JetBrains/CLion\ 2021.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/algorithm \
@@ -356,6 +356,6 @@ D:/New\ folder/cmake-build-debug/Playing_With_Fire_2_autogen/3LXPKN4LCA/moc_Home
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qtwidgets-config.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
   C:/Qt/6.2.4/mingw_64/include/QtWidgets/qwidget.h \
-  D:/New\ folder/src/views/Button.h \
-  D:/New\ folder/src/views/Label.h \
-  D:/New\ folder/src/views/TextField.h
+  D:/New\ folder\ (2)/src/views/Button.h \
+  D:/New\ folder\ (2)/src/views/Label.h \
+  D:/New\ folder\ (2)/src/views/TextField.h

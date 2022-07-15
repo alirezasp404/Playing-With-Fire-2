@@ -10,6 +10,8 @@
 #include <string>
 #include "../views/TextField.h"
 #include "../windows/Home.h"
+#include "../windows/Setting.h"
+#include "../windows/Guide.h"
 #include "../views/Button.h"
 
 
@@ -19,6 +21,7 @@ private:
     Button* button1;
     Button* button2;
     Button* button3;
+    Button* button4;
 
 public:
     start();
@@ -26,6 +29,8 @@ public:
 
 public slots:
     void startGame();
+    void guide();
+    void setting();
     void exit();
 };
 

@@ -8,13 +8,16 @@ Game::Game(QString name1,QString name2,QString lives) : QGraphicsView(), numOfWa
     showFullScreen();
     scene = new QGraphicsScene(this);
     scene->setSceneRect(0, 0, width(), height());
-    scene->setBackgroundBrush(QColor("black"));
+    scene->setBackgroundBrush(QImage(":/images/gamebg"));
     setScene(scene);
     int blockWidth = width() / numOfWalls;
     int blockHeight = height() / numOfWalls;
     addWalls(blockWidth, blockHeight);
     addBoxes(blockWidth, blockHeight);
     showDetails(name1,name2,lives);
+    addPLayers(blockWidth, blockHeight);
+//    controller = new Controller(player1, player2);
+//    scene->addItem(controller);
 }
 
 Game::~Game() {
@@ -77,10 +80,21 @@ void Game::showDetails(QString firstName,QString secondName,QString numLives){
     Name1 = new Button(200, 55);
     Name1->setPlainText(firstName);
     scene->addItem(Name1);
-    Name1->setPos(10, 10);
-
+    Name1->setPos(130, 5);
     Name2 = new Button(200, 55);
     Name2->setPlainText(secondName);
     scene->addItem(Name2);
     Name2->setPos(width() /2, 10);
+}
+void Game::addPLayers(int width, int height) {
+    player1 = new Player(true, width / 2, 10);
+    player2 = new Player(false, width / 2, 10);
+    scene->addItem(player1);
+    scene->addItem(player2);
+    player1->setPos(this->width()/12, this->height()/12);
+//    player1->positionX = 100;
+//    player1->positionY = 60;
+    player2->setPos(9*this->width()/10-30, 9*this->height()/10-30);
+//    player2->positionX = 1400;
+//    player2->positionY = 742;
 }

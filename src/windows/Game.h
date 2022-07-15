@@ -12,6 +12,7 @@
 #include "../views/Box.h"
 #include "../views/Button.h"
 #include "../views/Label.h"
+#include "../views/Player.h"
 
 
 class Game : public QGraphicsView {
@@ -20,7 +21,8 @@ class Game : public QGraphicsView {
     Wall *wall[15][15];
     class Box *box[130][130];
     QGraphicsScene *scene;
-
+    Player *player1;
+    Player *player2;
     void addWalls(int width, int height);
 
     void addBoxes(int width, int height);
@@ -34,6 +36,7 @@ class Game : public QGraphicsView {
 public:
     Game(QString,QString,QString );
     ~Game();
+    void addPLayers(int width, int height);
 };
 
 

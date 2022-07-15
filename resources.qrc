@@ -4,5 +4,8 @@
         <file alias="homebg">resources/images/homebg.png</file>
         <file alias="wall">resources/images/wall.png</file>
         <file alias="box">resources/images/box.png</file>
+        <file alias="gamebg">resources/images/gamebg.png</file>
+        <file alias="player1">resources/images/player1.png</file>
+        <file alias="player2">resources/images/player2.png</file>
     </qresource>
 </RCC>
