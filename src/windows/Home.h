@@ -24,8 +24,7 @@ private:
 public:
     Home();
     ~Home();
-    //QString readFile();
-    void writeFile(QString,QString,QString);
+    static void writeFile(const QString&,const QString&,const QString&);
 public slots:
     void start();
 };

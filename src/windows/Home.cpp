@@ -1,8 +1,6 @@
 
 
 #include "Home.h"
-#include "../views/Label.h"
-#include "../views/Button.h"
 #include "../windows/Game.h"
 
 Home::Home() {
@@ -80,7 +78,7 @@ void Home::start(){
     close();
 }
 
-void Home::writeFile(QString name1,QString name2,QString lives){
+void Home::writeFile(const QString& name1,const QString& name2,const QString& lives){
 
     QFile file("test.txt");
     if(file.open(QIODevice::WriteOnly | QIODevice::Text)) {
@@ -88,4 +86,4 @@ void Home::writeFile(QString name1,QString name2,QString lives){
         out <<name1<<"\n"<<name2<<"\n"<<lives;
     }
 file.close();
-};
+}

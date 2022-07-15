@@ -1,6 +1,3 @@
-//
-// Created by Reza on 7/15/2022.
-//
 
 #include "Guide.h"
 Guide::Guide() {

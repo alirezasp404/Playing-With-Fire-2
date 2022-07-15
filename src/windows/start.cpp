@@ -3,10 +3,7 @@
 //
 
 #include "start.h"
-#include "../views/Label.h"
-#include "../views/Button.h"
 #include "../windows/Game.h"
-#include "../windows/Guide.h"
 start::start() {
 
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -60,8 +57,8 @@ void start::exit(){
 void start::setting(){
     (new Setting)->show();
     close();
-};
+}
 void start::guide() {
     (new Guide)->show();
     close();
-};
+}

@@ -18,7 +18,6 @@ public:
     Button(int width,int height);
 
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
-    //void mousePressEvent(QGraphicsSceneMouseEvent *event);
 signals:
     void press();
 };

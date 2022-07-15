@@ -21,10 +21,6 @@ void Button::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QW
     QGraphicsTextItem::paint(painter, option, widget);
 
 }
-//void Button::press() {
-//
-//
-//}
 
 void Button::mousePressEvent(QGraphicsSceneMouseEvent *event) {
     QGraphicsTextItem::mousePressEvent(event);

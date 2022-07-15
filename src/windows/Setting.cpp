@@ -1,6 +1,4 @@
-//
-// Created by Reza on 7/15/2022.
-//
+
 
 #include "Setting.h"
 Setting::Setting() {
