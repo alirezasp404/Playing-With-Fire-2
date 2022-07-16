@@ -1,8 +1,8 @@
 
 #include "Box.h"
 
-Box::Box(int width, int height) {
+Box::Box(int blockWidth, int blockHeight) {
     QPixmap pixmap(":/images/box");
-    pixmap=pixmap.scaled(width,height);
+    pixmap=pixmap.scaled(blockWidth,blockHeight);
     setPixmap(pixmap);
 }

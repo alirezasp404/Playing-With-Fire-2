@@ -38,16 +38,13 @@ private:
 
     void setBoxPosition(int [][2]) const;
 
-    void showDetails(const QString &, const QString &, QString);
+    void showDetails(const QString &, const QString &, const QString &);
 
 
 public:
-    Game(QString, QString, QString);
+    Game(const QString &, const QString &, QString);
 
     ~Game();
-
-    void addPLayers(int width, int height);
-
 public slots:
 
     void exit();

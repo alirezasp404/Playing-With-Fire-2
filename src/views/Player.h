@@ -19,10 +19,10 @@ public:
     int positionY{};
     int horizontalMovement{};
     int verticalMovement{};
-    bool checkHorizontalMovement( int position);
-    bool checkVerticalMovement( int position);
+    bool checkHorizontalMovement( int position) const;
+    bool checkVerticalMovement( int position) const;
 public:
-    Player(QString image,int width,int height,int x,int y);
+    Player(const QString& image,int width,int height,int x,int y);
     void moveToRight();
     void moveToLeft();
     void moveToUp();

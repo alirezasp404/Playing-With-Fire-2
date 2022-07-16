@@ -10,26 +10,26 @@ Guide::Guide() {
     setScene(scene);
 
     guideText1 = new Button(1200,1000);
-    guideText1->setPlainText("Player1:\n\nmove to up:\t\t\tW\nmove to down:\t\tS\nmove to right:\t\t\tD\nmove to left:\t\t\tA\nbomb:\t\t\t\tE\n");
+    guideText1->setPlainText("Player 1:\n\nmove to up:\t\t\tW\nmove to down:\t\tS\nmove to right:\t\t\tD\nmove to left:\t\t\tA\nbomb:\t\t\t\tE\n");
     scene->addItem(guideText1);
-    guideText1->setPos(200,200 );
+    guideText1->setPos(width()/10,height()/5 );
 
     guideText2 = new Button(1200,1000);
-    guideText2->setPlainText("Player2:\n\nmove to up:\t\t\tARROW UP\nmove to down:\t\tARROW DOWN\nmove to right:\t\t\tARROW RIGHT\nmove to left:\t\t\tARROW LEFT\nbomb:\t\t\t\tSHIFT\n");
+    guideText2->setPlainText("Player 2:\n\nmove to up:\t\t\tARROW UP\nmove to down:\t\tARROW DOWN\nmove to right:\t\t\tARROW RIGHT\nmove to left:\t\t\tARROW LEFT\nbomb:\t\t\t\tSHIFT\n");
     scene->addItem(guideText2);
-    guideText2->setPos(200,500 );
+    guideText2->setPos(width()/10,height()/1.8);
 
     back = new Button(100,100);
-    back->setPlainText("BACK");
+    back->setPlainText(" BACK");
     scene->addItem(back);
-    back->setPos(20, 20 );
+    back->setPos(width()/10, height()/15 );
 
-    player1 = new Player(":/images/player1", this->width() / 10, 10,800,280);
-    player2 = new Player(":/images/player2", this->width() / 10, 10,800,580);
+    player1 = new Player(":/images/player1", this->width() / 3, height()/2,width()/2,height()/4);
+    player2 = new Player(":/images/player2", this->width() / 3, height()/2,width()/2,height()/1.7);
     scene->addItem(player1);
     scene->addItem(player2);
     connect(back,&Button::press, this,&Guide::backToStart);
-};
+}
 Guide::~Guide() {
     delete scene;
     delete guideText1;
@@ -41,4 +41,4 @@ Guide::~Guide() {
 void Guide::backToStart(){
     (new start)->show();
     close();
-};
+}

@@ -1,20 +1,21 @@
 
 #include "Game.h"
 #include<ctime>
+#include <utility>
 
-Game::Game(QString name1, QString name2, QString lives) : QGraphicsView(), numOfWalls(15), numOfBoxes(130) {
+Game::Game(const QString& name1, const QString& name2, QString lives) : QGraphicsView(), numOfWalls(15), numOfBoxes(130) {
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     showFullScreen();
     scene = new QGraphicsScene(this);
-    scene->setSceneRect(0, 0, width(), height());
-    scene->setBackgroundBrush(QImage(":/images/gamebg"));
+//    scene->setSceneRect(0, 0, width(), height());
+    scene->setBackgroundBrush(QImage(":/images/gameBG"));
     setScene(scene);
     int blockWidth = width() / numOfWalls;
     int blockHeight = height() / numOfWalls;
     addWalls(blockWidth, blockHeight);
     addBoxes(blockWidth, blockHeight);
-    showDetails(name1, name2, lives);
+    showDetails(name1, name2, std::move(lives));
     addPlayers(blockWidth, blockHeight);
     controller = new Controller(player1,player2);
     scene->addItem(controller);
@@ -65,7 +66,7 @@ void Game::addBoxes(int boxWidth, int boxHeight) {
     }
 }
 
-void Game::setBoxPosition(int boxPosition[15][2]) const {
+void Game::setBoxPosition(int boxPosition[][2]) const {
     srand(time(nullptr));
     for (int i = 0; i < numOfBoxes; ++i) {
         int x = (rand() + 1) % (numOfWalls - 1) + 1;
@@ -84,19 +85,19 @@ void Game::setBoxPosition(int boxPosition[15][2]) const {
     }
 }
 
-void Game::showDetails(const QString &firstName, const QString &secondName, QString numLives) {
-    name1 = new Button(200, 55);
+void Game::showDetails(const QString &firstName, const QString &secondName, const QString& numLives) {
+    name1 = new Button(2*width()/numOfWalls, height()/numOfWalls);
     name1->setPlainText(firstName);
     scene->addItem(name1);
-    name1->setPos(width()/15, 3);
-    name2 = new Button(200, 55);
+    name1->setPos(width()/numOfWalls, width()/(numOfWalls*25));
+    name2 = new Button(2*width()/numOfWalls, height()/numOfWalls);
     name2->setPlainText(secondName);
     scene->addItem(name2);
-    name2->setPos(width() - 310, 3);
-    exitButton = new Button(90, 55);
+    name2->setPos(12*width()/numOfWalls, width()/(numOfWalls*25));
+    exitButton = new Button(width()/numOfWalls, height()/numOfWalls);
     exitButton->setPlainText("  EXIT");
     scene->addItem(exitButton);
-    exitButton->setPos(width() - 815, 3);
+    exitButton->setPos(7*width()/numOfWalls, width()/(numOfWalls*25));
     connect(exitButton, &Button::press, this, &Game::exit);
 
 }

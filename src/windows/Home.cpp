@@ -17,44 +17,43 @@ QString line1,line2,line3;
     showFullScreen();
     scene = new QGraphicsScene(this);
     scene->setSceneRect(0, 0, width(), height());
-    scene->setBackgroundBrush(QImage(":/images/homebg"));
+    scene->setBackgroundBrush(QImage(":/images/homeBG"));
     setScene(scene);
-
-
-    textField1 = new TextField(200, 55);
-    textField1->setPlainText(line1);
-    scene->addItem(textField1);
-    textField1->setPos(width() / 2-100, height() / 2);
-
-    textField2 = new TextField(200, 55);
-    textField2->setPlainText(line2);
-    scene->addItem(textField2);
-    textField2->setPos(width() / 2-100, height() / 2+100);
-
-    numberOfLife = new TextField(200, 55);//textfield3
-    numberOfLife->setPlainText(line3);
-    scene->addItem(numberOfLife);
-    numberOfLife->setPos(width() / 2-100, height() / 2-100);
 
     firstLabel = new Label();
     firstLabel->setPlainText("First Player Name:");
     scene->addItem(firstLabel);
-    firstLabel->setPos(width() / 2 - 100, height() / 2 - firstLabel->boundingRect().height());
+    firstLabel->setPos(width() / 2.33, height() / 2 - firstLabel->boundingRect().height());
 
     secondLabel = new Label();
     secondLabel->setPlainText("Second Player Name:");
     scene->addItem(secondLabel);
-    secondLabel->setPos(width() / 2 - 100, height() / 2 - secondLabel->boundingRect().height() + 100);
+    secondLabel->setPos(width() / 2.33, height() / 2 - secondLabel->boundingRect().height() + 100);
 
     thirdLabel = new Label();
     thirdLabel->setPlainText("number of lives:");
     scene->addItem(thirdLabel);
-    thirdLabel->setPos(width() / 2 - 100, height() / 2 - firstLabel->boundingRect().height()-100);
+    thirdLabel->setPos(width() / 2.33, height() / 2 - firstLabel->boundingRect().height()-100);
+
+    numberOfLife = new TextField(200, 55);//textfield3
+    numberOfLife->setPlainText(line3);
+    scene->addItem(numberOfLife);
+    numberOfLife->setPos(width() / 2.3, height() / 2.6);
+
+    textField1 = new TextField(200, 55);
+    textField1->setPlainText(line1);
+    scene->addItem(textField1);
+    textField1->setPos(width() / 2.3, height() / 2);
+
+    textField2 = new TextField(200, 55);
+    textField2->setPlainText(line2);
+    scene->addItem(textField2);
+    textField2->setPos(width() / 2.3, height() / 1.62);
 
     button = new Button(200,150);
     button->setPlainText("    Start");
     scene->addItem(button);
-    button->setPos(width() / 2-100, height() / 2 + secondLabel->boundingRect().height() + 145);
+    button->setPos(width() / 2.3, height() / 2 + secondLabel->boundingRect().height() + 145);
 
     connect(button,&Button::press, this,&Home::start);
 }

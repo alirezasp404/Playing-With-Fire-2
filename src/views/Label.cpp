@@ -11,4 +11,4 @@ Label::Label(): QGraphicsTextItem() {
     setFont(font);
     document()->setDocumentMargin(10);
 
-};
+}

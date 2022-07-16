@@ -11,27 +11,27 @@ start::start() {
     showFullScreen();
     scene = new QGraphicsScene(this);
     scene->setSceneRect(0, 0, width(), height());
-    scene->setBackgroundBrush(QImage(":/images/homebg"));
+    scene->setBackgroundBrush(QImage(":/images/homeBG"));
     setScene(scene);
     button1 = new Button(200,150);
-    button1->setPlainText("    START GAME");
+    button1->setPlainText("   START GAME");
     scene->addItem(button1);
-    button1->setPos(width() / 2-100, height() / 2 );
+    button1->setPos(width() / 2.3, height() / 2 );
 
     button2 = new Button(200,150);
-    button2->setPlainText("    GUIDE GAME");
+    button2->setPlainText("   GUIDE GAME");
     scene->addItem(button2);
-    button2->setPos(width() / 2-100, height() / 2 +65);
+    button2->setPos(width() / 2.3, height() /1.75);
 
     button3 = new Button(200,150);
-    button3->setPlainText("        SETTING");
+    button3->setPlainText("      SETTING");
     scene->addItem(button3);
-    button3->setPos(width() / 2-100, height() / 2 +130);
+    button3->setPos(width() / 2.3, height() / 1.55);
 
     button4 = new Button(200,150);
-    button4->setPlainText("            EXIT");
+    button4->setPlainText("          EXIT");
     scene->addItem(button4);
-    button4->setPos(width() / 2-100, height() / 2 +195);
+    button4->setPos(width() / 2.3, height() / 1.39);
 
     connect(button1,&Button::press, this,&start::startGame);
     connect(button2,&Button::press, this,&start::guide);

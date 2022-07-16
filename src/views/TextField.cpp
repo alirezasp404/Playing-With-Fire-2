@@ -18,7 +18,7 @@ TextField::TextField(int width, int height) : width(width), height(height), QGra
 }
 
 void TextField::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
-    QPixmap pixmap(":images/textbg");
+    QPixmap pixmap(":images/textBG");
     pixmap=pixmap.scaled(width,height);
     painter->setBrush(pixmap);
     painter->drawRect(boundingRect());
