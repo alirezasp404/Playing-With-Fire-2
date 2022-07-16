@@ -17,8 +17,10 @@ Game::Game(const QString& name1, const QString& name2, QString lives) : QGraphic
     addBoxes(blockWidth, blockHeight);
     showDetails(name1, name2, std::move(lives));
     addPlayers(blockWidth, blockHeight);
+    player1->name=name1;
     controller = new Controller(player1,player2);
     scene->addItem(controller);
+
 }
 
 Game::~Game() {
@@ -90,12 +92,14 @@ void Game::showDetails(const QString &firstName, const QString &secondName, cons
     name1->setPlainText(firstName);
     scene->addItem(name1);
     name1->setPos(width()/numOfWalls, width()/(numOfWalls*25));
+
     name2 = new Button(2*width()/numOfWalls, height()/numOfWalls);
     name2->setPlainText(secondName);
     scene->addItem(name2);
     name2->setPos(12*width()/numOfWalls, width()/(numOfWalls*25));
+
     exitButton = new Button(width()/numOfWalls, height()/numOfWalls);
-    exitButton->setPlainText("  EXIT");
+    exitButton->setPlainText("     EXIT");
     scene->addItem(exitButton);
     exitButton->setPos(7*width()/numOfWalls, width()/(numOfWalls*25));
     connect(exitButton, &Button::press, this, &Game::exit);
@@ -110,5 +114,6 @@ void Game::addPlayers(int blockWidth, int blockHeight) {
 }
 
 void Game::exit() {
+    (new Final(player1))->show();
     close();
 }

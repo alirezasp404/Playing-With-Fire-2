@@ -11,6 +11,7 @@ Player::Player(const QString& image, int width, int height, int x, int y) {
     positionX = x;
     positionY = y;
     setPos(x, y);
+    Image=image;
 }
 
 
@@ -51,3 +52,7 @@ bool Player::checkHorizontalMovement(int position) const {
         return false;
     return true;
 }
+QString Player:: getImage(){
+    return Image;
+};
+

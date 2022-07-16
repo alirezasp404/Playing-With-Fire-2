@@ -11,6 +11,7 @@
 #include "../views/Label.h"
 #include "../views/Player.h"
 #include "../views/Controller.h"
+#include "../windows/Final.h"
 
 
 class Game : public QGraphicsView {

@@ -19,14 +19,17 @@ public:
     int positionY{};
     int horizontalMovement{};
     int verticalMovement{};
+    QString Image;
     bool checkHorizontalMovement( int position) const;
     bool checkVerticalMovement( int position) const;
+    QString getImage();
 public:
     Player(const QString& image,int width,int height,int x,int y);
     void moveToRight();
     void moveToLeft();
     void moveToUp();
     void moveToDown();
+
 };
 
 #endif //PLAYING_WITH_FIRE_2_PLAYER_H
