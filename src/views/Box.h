@@ -6,7 +6,8 @@
 
 class Box : public Block{
 public:
-Box(int width, int height);
+    Box(int width, int height,int horizontalIndex,int verticalIndex);
+
 };
 
 

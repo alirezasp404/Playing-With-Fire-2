@@ -2,56 +2,34 @@
 
 #include "Player.h"
 
-Player::Player(const QString& image, int width, int height, int x, int y) {
+Player::Player(const QString& image, int width, int height, int hIndex, int vIndex):horizontalIndex(hIndex),verticalIndex(vIndex) {
     QPixmap pixmap(image);
     pixmap = pixmap.scaled(3 * width / 8, 3 * width / 8);
     setPixmap(pixmap);
     horizontalMovement = width;
     verticalMovement = height;
-    positionX = x;
-    positionY = y;
-    setPos(x, y);
+    setPos(hIndex*horizontalMovement+horizontalMovement/4, vIndex*verticalMovement+verticalMovement/4);
     Image=image;
 }
 
 
 void Player::moveToRight() {
-    if (checkHorizontalMovement(positionX + horizontalMovement)) {
-        positionX = positionX + horizontalMovement;
-        setPos(positionX, positionY);
+        setPos((++horizontalIndex)*horizontalMovement+horizontalMovement/4, verticalIndex*verticalMovement+verticalMovement/4);
     }
-}
 
 void Player::moveToLeft() {
-    if (checkHorizontalMovement(positionX - horizontalMovement)) {
-        positionX = positionX - horizontalMovement;
-        setPos(positionX, positionY);
+    setPos((--horizontalIndex)*horizontalMovement+horizontalMovement/4, verticalIndex*verticalMovement+verticalMovement/4);
     }
-}
 
 void Player::moveToUp() {
-    if(checkVerticalMovement(positionY - verticalMovement)) {
-        positionY = positionY - verticalMovement;
-        setPos(positionX, positionY);
+    setPos(horizontalIndex*horizontalMovement+horizontalMovement/4, (--verticalIndex)*verticalMovement+verticalMovement/4);
     }
-}
 
 void Player::moveToDown() {
-    if(checkVerticalMovement(positionY + verticalMovement)) {
-        positionY = positionY + verticalMovement;
-        setPos(positionX, positionY);
+    setPos(horizontalIndex*horizontalMovement+horizontalMovement/4, (++verticalIndex)*verticalMovement+verticalMovement/4);
     }
-}
 
-bool Player::checkHorizontalMovement(int position) const {
-    if (position >= horizontalMovement * 14 || position <= horizontalMovement)
-        return false;
-    return true;
-}bool Player::checkVerticalMovement(int position) const {
-    if (position >= verticalMovement * 14 || position <= verticalMovement)
-        return false;
-    return true;
-}
+
 QString Player:: getImage(){
     return Image;
 };

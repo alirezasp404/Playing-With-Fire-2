@@ -13,7 +13,7 @@
 class Final :public QGraphicsView{
 public:
     Final(Player* winner);
-    ~Final();
+    ~Final() override;
 
 protected:
     QGraphicsScene* scene;

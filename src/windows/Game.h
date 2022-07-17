@@ -10,42 +10,41 @@
 #include "../views/Button.h"
 #include "../views/Label.h"
 #include "../views/Player.h"
-#include "../views/Controller.h"
 #include "../windows/Final.h"
-
+#include <QKeyEvent>
 
 class Game : public QGraphicsView {
 private:
     const int numOfWalls;
     const int numOfBoxes;
-    Wall *wall[15][15];
-
-    class Box *box[130][130];
-
-    QGraphicsScene *scene;
+    QList<Wall *>walls;
+    QList< class Box *>boxes;
+    QGraphicsScene *scene{};
     Player *player1;
     Player *player2;
-    Controller *controller;
     Button *name1;
     Button *name2;
     Button *lives;
     Button *exitButton;
-
+    int horizontalMovement{};
+    int verticalMovement{};
     void addWalls(int width, int height);
 
     void addBoxes(int width, int height);
 
     void addPlayers(int width, int height);
 
-    void setBoxPosition(int [][2]) const;
+    bool checkBoxPosition(int i, int j) const;
 
     void showDetails(const QString &, const QString &, const QString &);
-
+protected:
+    void keyPressEvent(QKeyEvent *event) override;
 
 public:
     Game(const QString &, const QString &, QString);
 
-    ~Game();
+    ~Game() override;
+    bool checkMovement( int horizontalIndex,int verticalIndex) const;
 public slots:
 
     void exit();

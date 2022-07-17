@@ -3,8 +3,10 @@
 #include <QGraphicsPixmapItem>
 
 class Block :public QGraphicsPixmapItem{
-protected:
-int x,y;
+public:
+int horizontalIndex,verticalIndex;
+    Block(int hIndex,int vIndex);
+
 };
 
 

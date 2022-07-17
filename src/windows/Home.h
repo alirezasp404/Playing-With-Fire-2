@@ -23,7 +23,7 @@ private:
     Button* button;
 public:
     Home();
-    ~Home();
+    ~Home() override;
     static void writeFile(const QString&,const QString&,const QString&);
 public slots:
     void start();

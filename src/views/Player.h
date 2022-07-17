@@ -15,13 +15,11 @@ public:
     int lifeCount{};
     int speed{};
     int bombRadius{};
-    int positionX{};
-    int positionY{};
+    int horizontalIndex{};
+    int verticalIndex{};
     int horizontalMovement{};
     int verticalMovement{};
     QString Image;
-    bool checkHorizontalMovement( int position) const;
-    bool checkVerticalMovement( int position) const;
     QString getImage();
 public:
     Player(const QString& image,int width,int height,int x,int y);

@@ -8,7 +8,7 @@
 
 class Wall :public Block{
 public:
-    Wall(int width,int height);
+    Wall(int width,int height,int horizontalIndex,int verticalIndex);
 };
 
 
