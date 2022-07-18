@@ -24,8 +24,8 @@ Guide::Guide() {
     scene->addItem(back);
     back->setPos(width()/10, height()/15 );
 
-    player1 = new Player(":/images/player1", this->width() / 5, height()/5,width()/2,height()/3.7);
-    player2 = new Player(":/images/player2", this->width() / 5, height()/5,width()/2,height()/1.6);
+    player1 = new Player(":/images/player1", width() / 5, height()/5,width() / 960,height()/720);
+    player2 = new Player(":/images/player2", width() / 5, height()/5,width() / 960,height()/360);
     scene->addItem(player1);
     scene->addItem(player2);
     connect(back,&Button::press, this,&Guide::backToStart);

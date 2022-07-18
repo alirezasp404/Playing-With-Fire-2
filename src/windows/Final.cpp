@@ -12,9 +12,10 @@ Final::Final(Player* winner) {
     scene->setBackgroundBrush(QColor("black"));
     setScene(scene);
 
-    Winner=new Player(winner->getImage(),width()/4,width()/4,this->width()/2.2,this->height()/2);
-    scene->addItem(Winner);
+    Winner=new Player(":/images/player1", width()/5, height()/7, width()/960,height()/300);
+   scene->addItem(Winner);
     Winner->name=winner->name;
+
     finish = new Button(width()/15, height()/20);
     finish->setPlainText("  FINISH");
     scene->addItem(finish);

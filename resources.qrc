@@ -7,5 +7,6 @@
         <file alias="gameBG">resources/images/gameBg.png</file>
         <file alias="player1">resources/images/player1.png</file>
         <file alias="player2">resources/images/player2.png</file>
+        <file alias="bomb">resources/images/bomb.png</file>
     </qresource>
 </RCC>

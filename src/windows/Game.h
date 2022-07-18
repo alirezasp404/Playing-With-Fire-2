@@ -7,6 +7,7 @@
 #include <QFile>
 #include "../views/Wall.h"
 #include "../views/Box.h"
+#include "../views/Bomb.h"
 #include "../views/Button.h"
 #include "../views/Label.h"
 #include "../views/Player.h"
