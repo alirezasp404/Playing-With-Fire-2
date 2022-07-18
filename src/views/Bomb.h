@@ -1,6 +1,4 @@
-//
-// Created by Reza on 7/18/2022.
-//
+
 
 #ifndef PLAYING_WITH_FIRE_2_BOMB_H
 #define PLAYING_WITH_FIRE_2_BOMB_H
@@ -9,8 +7,8 @@
 
 class Bomb: public QGraphicsPixmapItem{
 public:
-    int positionX;
-    int positionY;
+    int horizontalIndex;
+    int verticalIndex ;
     Bomb(int ,int ,int ,int);
 };
 

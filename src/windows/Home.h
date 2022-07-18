@@ -21,8 +21,9 @@ private:
     Label* secondLabel;
     Label* thirdLabel;
     Button* button;
+    QString numOfBoxes;
 public:
-    Home();
+    Home(QString numOfBoxes);
     ~Home() override;
     static void writeFile(const QString&,const QString&,const QString&);
 public slots:

@@ -15,17 +15,17 @@
 #include "../views/Button.h"
 
 
-class start : public QGraphicsView{
+class Start : public QGraphicsView{
 private:
     QGraphicsScene* scene;
     Button* button1;
     Button* button2;
     Button* button3;
     Button* button4;
-
+    QString numOfBoxes;
 public:
-    start();
-    ~start();
+    Start(QString numOfBoxes="100");
+    ~Start();
 
 public slots:
     void startGame();

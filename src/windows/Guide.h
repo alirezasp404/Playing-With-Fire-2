@@ -4,7 +4,7 @@
 #include <QGraphicsView>
 #include "../views/Button.h"
 #include "../views/Player.h"
-#include "../windows/start.h"
+#include "../windows/Start.h"
 
 
 class Guide: public QGraphicsView{

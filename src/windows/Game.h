@@ -17,7 +17,7 @@
 class Game : public QGraphicsView {
 private:
     const int numOfWalls;
-    const int numOfBoxes;
+    int numOfBoxes;
     QList<Wall *>walls;
     QList< class Box *>boxes;
     QGraphicsScene *scene{};
@@ -42,7 +42,7 @@ protected:
     void keyPressEvent(QKeyEvent *event) override;
 
 public:
-    Game(const QString &, const QString &, QString);
+    Game(const QString &, const QString &, QString,QString);
 
     ~Game() override;
     bool checkMovement( int horizontalIndex,int verticalIndex) const;

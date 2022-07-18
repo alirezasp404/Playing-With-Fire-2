@@ -16,14 +16,27 @@ Setting::Setting() {
     scene->addItem(back);
     back->setPos(width()/10, height()/15 );
 
+    label = new Label();
+    label->setPlainText("Number Of Boxes");
+    scene->addItem(label);
+    label->setPos(width() / 2.33, height() /2.7);
+
+    numOfBoxes = new TextField(200, 55);
+    numOfBoxes->setPlainText("100");
+    scene->addItem(numOfBoxes);
+    numOfBoxes->setPos(width() / 2.3, height() / 2.3);
+
     connect(back,&Button::press, this,&Setting::backToStart);
 
 }
 Setting::~Setting() {
     delete scene;
     delete back;
+    delete numOfBoxes;
+    delete label;
 }
 void Setting::backToStart(){
-    (new start)->show();
+
+    (new Start(numOfBoxes->toPlainText()))->show();
     close();
 }

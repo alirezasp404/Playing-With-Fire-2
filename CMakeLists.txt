@@ -15,7 +15,7 @@ find_package(Qt6 COMPONENTS
         Multimedia
         REQUIRED)
 
-add_executable(Playing_With_Fire_2 main.cpp src/windows/Home.cpp src/windows/Game.h src/windows/Game.cpp src/windows/Home.h src/windows/start.h src/windows/start.cpp src/windows/Setting.cpp src/windows/Setting.h src/windows/Guide.cpp src/windows/Guide.h src/windows/Final.cpp src/windows/Final.h src/views/TextField.cpp src/views/TextField.h src/views/Label.cpp src/views/Label.h src/views/Button.h src/views/Button.cpp resources.qrc src/views/Block.cpp src/views/Block.h src/views/Wall.cpp src/views/Wall.h src/views/Box.cpp src/views/Box.h src/views/Player.cpp src/views/Player.h src/views/Bomb.cpp src/views/Bomb.h)
+add_executable(Playing_With_Fire_2 main.cpp src/windows/Home.cpp src/windows/Game.h src/windows/Game.cpp src/windows/Home.h src/windows/Start.h src/windows/Start.cpp src/windows/Setting.cpp src/windows/Setting.h src/windows/Guide.cpp src/windows/Guide.h src/windows/Final.cpp src/windows/Final.h src/views/TextField.cpp src/views/TextField.h src/views/Label.cpp src/views/Label.h src/views/Button.h src/views/Button.cpp resources.qrc src/views/Block.cpp src/views/Block.h src/views/Wall.cpp src/views/Wall.h src/views/Box.cpp src/views/Box.h src/views/Player.cpp src/views/Player.h src/views/Bomb.cpp src/views/Bomb.h)
 target_link_libraries(Playing_With_Fire_2
         Qt::Core
         Qt::Gui

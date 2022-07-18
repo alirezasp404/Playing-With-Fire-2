@@ -22,7 +22,7 @@ public:
     QString Image;
     QString getImage();
 public:
-    Player(const QString& image,int width,int height,int x,int y);
+    Player(const QString& image,int width,int height, int hIndex, int vIndex);
     void moveToRight();
     void moveToLeft();
     void moveToUp();

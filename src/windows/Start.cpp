@@ -2,9 +2,9 @@
 // Created by Reza on 7/13/2022.
 //
 
-#include "start.h"
+#include "Start.h"
 #include "../windows/Game.h"
-start::start() {
+Start::Start(QString numOfBoxes) {
 
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -13,6 +13,7 @@ start::start() {
     scene->setSceneRect(0, 0, width(), height());
     scene->setBackgroundBrush(QImage(":/images/homeBG"));
     setScene(scene);
+    this->numOfBoxes=std::move(numOfBoxes);
     button1 = new Button(200,150);
     button1->setPlainText("   START GAME");
     scene->addItem(button1);
@@ -33,32 +34,32 @@ start::start() {
     scene->addItem(button4);
     button4->setPos(width() / 2.3, height() / 1.39);
 
-    connect(button1,&Button::press, this,&start::startGame);
-    connect(button2,&Button::press, this,&start::guide);
-    connect(button3,&Button::press, this,&start::setting);
-    connect(button4,&Button::press, this,&start::exit);
+    connect(button1,&Button::press, this,&Start::startGame);
+    connect(button2,&Button::press, this,&Start::guide);
+    connect(button3,&Button::press, this,&Start::setting);
+    connect(button4,&Button::press, this,&Start::exit);
 
 }
-start::~start() {
+Start::~Start() {
     delete button1;
     delete button2;
     delete button3;
     delete button4;
     delete scene;
 }
-void start::startGame(){
-    (new Home)->show();
+void Start::startGame(){
+    (new Home(numOfBoxes))->show();
     close();
 
 }
-void start::exit(){
+void Start::exit(){
     close();
 }
-void start::setting(){
+void Start::setting(){
     (new Setting)->show();
     close();
 }
-void start::guide() {
+void Start::guide() {
     (new Guide)->show();
     close();
 }

@@ -3,7 +3,7 @@
 #include "Home.h"
 #include "../windows/Game.h"
 
-Home::Home() {
+Home::Home(QString numOfBoxes) {
 QString line1,line2,line3;
     QFile file("test.txt");
     if(file.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -19,6 +19,8 @@ QString line1,line2,line3;
     scene->setSceneRect(0, 0, width(), height());
     scene->setBackgroundBrush(QImage(":/images/homeBG"));
     setScene(scene);
+
+    this->numOfBoxes=numOfBoxes;
 
     firstLabel = new Label();
     firstLabel->setPlainText("First Player Name:");
@@ -73,7 +75,7 @@ void Home::start(){
     auto name2=textField2->toPlainText();
     auto numLives=numberOfLife->toPlainText();
     writeFile(textField1->toPlainText(),textField2->toPlainText(),numberOfLife->toPlainText());
-    (new Game(name1,name2,numLives))->show();
+    (new Game(name1,name2,numLives,numOfBoxes))->show();
     close();
 }
 

@@ -12,15 +12,16 @@
 
 class Final :public QGraphicsView{
 public:
-    Final(Player* winner);
+    Final(Player* winner,Player* player);
     ~Final() override;
 
 protected:
     QGraphicsScene* scene;
     Button* finish;
-    Label* nameLabel;
+    Player* winnerImage;
     Button* winnerName;
-    Player* Winner;
+    Button* playerName1;
+    Button* playerName2;
 public slots:
     void Finish();
 };

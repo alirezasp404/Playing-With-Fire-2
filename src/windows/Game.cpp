@@ -3,14 +3,15 @@
 #include<ctime>
 #include <utility>
 
-Game::Game(const QString &name1, const QString &name2, QString lives)
-        : QGraphicsView(), numOfWalls(15), numOfBoxes(80) {
+Game::Game(const QString &name1, const QString &name2, QString lives, QString numberOfBoxes)
+        : QGraphicsView(), numOfWalls(15) {
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     showFullScreen();
     scene = new QGraphicsScene(this);
     scene->setBackgroundBrush(QImage(":/images/gameBG"));
     setScene(scene);
+    this->numOfBoxes= numberOfBoxes.toInt();
     horizontalMovement = width() / numOfWalls;
     verticalMovement = height() / numOfWalls;
     addWalls(horizontalMovement, verticalMovement);
@@ -89,7 +90,7 @@ void Game::showDetails(const QString &firstName, const QString &secondName, cons
     name2->setPos(12 * width() / numOfWalls, width() / (numOfWalls * 25));
 
     exitButton = new Button(width() / numOfWalls, height() / numOfWalls);
-    exitButton->setPlainText("     EXIT");
+    exitButton->setPlainText("   EXIT");
     scene->addItem(exitButton);
     exitButton->setPos(7 * width() / numOfWalls, width() / (numOfWalls * 25));
     connect(exitButton, &Button::press, this, &Game::exit);
@@ -106,7 +107,7 @@ void Game::addPlayers(int blockWidth, int blockHeight) {
 }
 
 void Game::exit() {
-    (new Final(player1))->show();
+    (new Final(player1,player2))->show();
     close();
 }
 
