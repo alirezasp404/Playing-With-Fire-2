@@ -11,7 +11,7 @@ class Player:public QGraphicsPixmapItem{
 public:
     QString name;
     int score{};
-    int bombCount{};
+    int bombCount{0};
     int lifeCount{};
     int speed{};
     int bombRadius{};
@@ -20,8 +20,8 @@ public:
     int horizontalMovement{};
     int verticalMovement{};
     QString Image;
-    QString getImage();
 public:
+    QString getImage();
     Player(const QString& image,int width,int height, int hIndex, int vIndex);
     void moveToRight();
     void moveToLeft();

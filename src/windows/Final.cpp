@@ -1,6 +1,3 @@
-//
-// Created by Reza on 7/16/2022.
-//
 
 #include "Final.h"
 Final::Final(Player* winner,Player* player) {

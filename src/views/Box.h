@@ -3,11 +3,12 @@
 
 
 #include "Block.h"
+#include <QTimer>
 
-class Box : public Block{
+class Box : public Block {
 public:
-    Box(int width, int height,int horizontalIndex,int verticalIndex);
-
+    bool boxRemoved{false};
+    Box(int width, int height, int horizontalIndex, int verticalIndex);
 };
 
 

@@ -18,35 +18,56 @@ class Game : public QGraphicsView {
 private:
     const int numOfWalls;
     int numOfBoxes;
-    QList<Wall *>walls;
-    QList< class Box *>boxes;
+    QList<Wall *> walls;
+    QList<class Box *> boxes;
     QGraphicsScene *scene{};
     Player *player1;
     Player *player2;
     Button *name1;
     Button *name2;
-    Button *lives;
+    Bomb *bomb1;
+    Bomb *bomb2;
+    int numberOfLives;
     Button *exitButton;
     int horizontalMovement{};
     int verticalMovement{};
-    void addWalls(int width, int height);
 
-    void addBoxes(int width, int height);
+    void addWalls();
 
-    void addPlayers(int width, int height);
+    void addBoxes();
+
+    void addPlayers();
 
     bool checkBoxPosition(int i, int j) const;
 
-    void showDetails(const QString &, const QString &, const QString &);
+    int checkMovement(int horizontalIndex, int verticalIndex) const;
+
+    void removeBoxes(int hIndex, int vIndex,int& score);
+
+    void removeLeftBoxes(int hIndex, int vIndex,int& score ,bool checkAgain = false);
+
+    void removeRightBoxes(int hIndex, int vIndex,int& score, bool checkAgain = false);
+
+    void removeUpBoxes(int hIndex, int vIndex,int& score, bool checkAgain = false);
+
+    void removeDownBoxes(int hIndex, int vIndex,int& score, bool checkAgain = false);
+
+    void showDetails();
+
+
 protected:
     void keyPressEvent(QKeyEvent *event) override;
 
 public:
-    Game(const QString &, const QString &, QString,QString);
+    Game(const QString &, const QString &, QString, const QString&);
 
     ~Game() override;
-    bool checkMovement( int horizontalIndex,int verticalIndex) const;
+
 public slots:
+
+    void explodeTime1();
+
+    void explodeTime2();
 
     void exit();
 };

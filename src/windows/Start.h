@@ -1,6 +1,4 @@
-//
-// Created by Reza on 7/13/2022.
-//
+
 
 #ifndef PLAYING_WITH_FIRE_2_START_H
 #define PLAYING_WITH_FIRE_2_START_H
