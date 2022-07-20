@@ -1,11 +1,10 @@
-//
-// Created by Reza on 7/13/2022.
-//
+
 
 #include "Start.h"
-#include "../windows/Game.h"
-Start::Start(QString numOfBoxes) {
 
+#include <utility>
+#include "../windows/Game.h"
+Start::Start(QString numOfBoxes,QString gameSpeed) {
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     showFullScreen();
@@ -14,6 +13,7 @@ Start::Start(QString numOfBoxes) {
     scene->setBackgroundBrush(QImage(":/images/homeBG"));
     setScene(scene);
     this->numOfBoxes=std::move(numOfBoxes);
+    this->gameSpeed=std::move(gameSpeed);
     button1 = new Button(200,150);
     button1->setPlainText("   START GAME");
     scene->addItem(button1);
@@ -48,7 +48,7 @@ Start::~Start() {
     delete scene;
 }
 void Start::startGame(){
-    (new Home(numOfBoxes))->show();
+    (new Home(numOfBoxes,gameSpeed))->show();
     close();
 
 }

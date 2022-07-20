@@ -1,7 +1,6 @@
 
 
 #include "Player.h"
-
 Player::Player(const QString& image, int width, int height, int hIndex, int vIndex):horizontalIndex(hIndex),verticalIndex(vIndex) {
     QPixmap pixmap(image);
     pixmap = pixmap.scaled(3 * width / 8, 3 * width / 8);
@@ -33,4 +32,4 @@ void Player::moveToDown() {
 QString Player:: getImage(){
     return Image;
 };
-
+int Player::speed;

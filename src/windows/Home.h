@@ -22,8 +22,9 @@ private:
     Label* thirdLabel;
     Button* button;
     QString numOfBoxes;
+    QString gameSpeed;
 public:
-    Home(QString numOfBoxes);
+    Home(QString numOfBoxes,QString gameSpeed);
     ~Home() override;
     static void writeFile(const QString&,const QString&,const QString&);
 public slots:

@@ -4,7 +4,7 @@
 #include <QTextDocument>
 
 Label::Label(): QGraphicsTextItem() {
-    setDefaultTextColor(QColor("#a8a002"));
+    setDefaultTextColor(QColor("white"));
     QFont font;
     font.setPixelSize(23);
     font.setBold(true);

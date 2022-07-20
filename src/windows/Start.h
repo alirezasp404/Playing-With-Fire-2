@@ -21,8 +21,9 @@ private:
     Button* button3;
     Button* button4;
     QString numOfBoxes;
+    QString gameSpeed;
 public:
-    Start(QString numOfBoxes="100");
+    Start(QString numOfBoxes="100",QString gameSpeed="1");
     ~Start();
 
 public slots:

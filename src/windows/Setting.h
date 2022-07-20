@@ -10,7 +10,9 @@ class Setting :public QGraphicsView{
     Button* back;
     QGraphicsScene* scene;
     TextField* numOfBoxes;
-    Label* label;
+    Label* label1;
+    TextField* gameSpeed;
+    Label* label2;
 public:
     Setting();
     ~Setting();
