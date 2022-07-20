@@ -84,6 +84,10 @@ void Game::addBoxes() {
     }
 }
 
+void Game::addBoxesOnTimer() {
+    scene->addItem(boxes.at(boxIndex));
+    delete boxes.at(boxIndex++)->timer;
+}
 bool Game::checkBoxPosition(int i, int j) const {
     for (int k = 0; k < boxes.size() - 1; k++) {
         if (boxes.at(k)->horizontalIndex == i && boxes.at(k)->verticalIndex == j)
@@ -156,7 +160,7 @@ void Game::exit() {
 void Game::keyPressEvent(QKeyEvent *event) {
     QGraphicsView::keyPressEvent(event);
     //player1 movement
-    if (player1->lifeCount != 0 && player1->lifeCount != 0) {
+    if (player1->lifeCount != 0 && player2->lifeCount != 0) {
         if (boxIndex == numOfBoxes) {
             if (event->key() == Qt::Key::Key_D)
                 playersMovement(player1, 'R');
@@ -273,12 +277,6 @@ void Game::removeBoxes(int hIndex, int vIndex, Player *player, Player *enemy) {
 void Game::removeLeftBoxes(int hIndex, int vIndex, Player *player, Player *enemy, bool checkAgain) {
     int check = checkMovement(hIndex - 1, vIndex);
     if (check == -2 && !checkAgain) {
-        if (player->horizontalIndex == hIndex - 1 && player->verticalIndex == vIndex)
-            player->lifeCount--;
-        if (enemy->horizontalIndex == hIndex - 1 && enemy->verticalIndex == vIndex) {
-            enemy->lifeCount--;
-            player->score += 50;
-        }
         removeLeftBoxes(hIndex - 1, vIndex, player, enemy, true);
     } else if (check >= 0) {
         scene->removeItem(boxes.at(check));
@@ -286,17 +284,17 @@ void Game::removeLeftBoxes(int hIndex, int vIndex, Player *player, Player *enemy
         boxes.removeAt(check);
         player->score += 5;
     }
+    if (player->horizontalIndex == hIndex - 1 && player->verticalIndex == vIndex)
+        player->lifeCount--;
+    if (enemy->horizontalIndex == hIndex - 1 && enemy->verticalIndex == vIndex) {
+        enemy->lifeCount--;
+        player->score += 50;
+    }
 }
 
 void Game::removeRightBoxes(int hIndex, int vIndex, Player *player, Player *enemy, bool checkAgain) {
     int check = checkMovement(hIndex + 1, vIndex);
     if (check == -2 && !checkAgain) {
-        if (player->horizontalIndex == hIndex + 1 && player->verticalIndex == vIndex)
-            player->lifeCount--;
-        if (enemy->horizontalIndex == hIndex + 1 && enemy->verticalIndex == vIndex) {
-            enemy->lifeCount--;
-            player->score += 50;
-        }
         removeRightBoxes(hIndex + 1, vIndex, player, enemy, true);
     } else if (check >= 0) {
         scene->removeItem(boxes.at(check));
@@ -304,17 +302,17 @@ void Game::removeRightBoxes(int hIndex, int vIndex, Player *player, Player *enem
         boxes.removeAt(check);
         player->score += 5;
     }
+    if (player->horizontalIndex == hIndex + 1 && player->verticalIndex == vIndex)
+        player->lifeCount--;
+    if (enemy->horizontalIndex == hIndex + 1 && enemy->verticalIndex == vIndex) {
+        enemy->lifeCount--;
+        player->score += 50;
+    }
 }
 
 void Game::removeUpBoxes(int hIndex, int vIndex, Player *player, Player *enemy, bool checkAgain) {
     int check = checkMovement(hIndex, vIndex - 1);
     if (check == -2 && !checkAgain) {
-        if (player->horizontalIndex == hIndex && player->verticalIndex == vIndex - 1)
-            player->lifeCount--;
-        if (enemy->horizontalIndex == hIndex && enemy->verticalIndex == vIndex - 1) {
-            enemy->lifeCount--;
-            player->score += 50;
-        }
         removeUpBoxes(hIndex, vIndex - 1, player, enemy, true);
     } else if (check >= 0) {
         scene->removeItem(boxes.at(check));
@@ -322,17 +320,17 @@ void Game::removeUpBoxes(int hIndex, int vIndex, Player *player, Player *enemy, 
         boxes.removeAt(check);
         player->score += 5;
     }
+    if (player->horizontalIndex == hIndex && player->verticalIndex == vIndex - 1)
+        player->lifeCount--;
+    if (enemy->horizontalIndex == hIndex && enemy->verticalIndex == vIndex - 1) {
+        enemy->lifeCount--;
+        player->score += 50;
+    }
 }
 
 void Game::removeDownBoxes(int hIndex, int vIndex, Player *player, Player *enemy, bool checkAgain) {
     int check = checkMovement(hIndex, vIndex + 1);
     if (check == -2 && !checkAgain) {
-        if (player->horizontalIndex == hIndex && player->verticalIndex == vIndex + 1)
-            player->lifeCount--;
-        if (enemy->horizontalIndex == hIndex && enemy->verticalIndex == vIndex + 1) {
-            enemy->lifeCount--;
-            player->score += 50;
-        }
         removeDownBoxes(hIndex, vIndex + 1, player, enemy, true);
     } else if (check >= 0) {
         scene->removeItem(boxes.at(check));
@@ -340,12 +338,15 @@ void Game::removeDownBoxes(int hIndex, int vIndex, Player *player, Player *enemy
         boxes.removeAt(check);
         player->score += 5;
     }
+    if (player->horizontalIndex == hIndex && player->verticalIndex == vIndex + 1)
+        player->lifeCount--;
+    if (enemy->horizontalIndex == hIndex && enemy->verticalIndex == vIndex + 1) {
+        enemy->lifeCount--;
+        player->score += 50;
+    }
 }
 
-void Game::addBoxesOnTimer() {
-    scene->addItem(boxes.at(boxIndex));
-    delete boxes.at(boxIndex++)->timer;
-}
+
 
 
 
