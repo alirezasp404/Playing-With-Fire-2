@@ -6,5 +6,4 @@ Box::Box(int blockWidth, int blockHeight,int horizontalIndex,int verticalIndex):
     pixmap=pixmap.scaled(blockWidth/1.1,blockHeight/1.1);
     setPixmap(pixmap);
     setPos(horizontalIndex*blockWidth+blockWidth/15,verticalIndex*blockHeight+blockHeight/15);
-    timer=new QTimer;
 }

@@ -23,6 +23,7 @@ private:
     QList<Wall *> walls;
     QList<class Box *> boxes;
     QGraphicsScene *scene{};
+    QTimer* timer;
     Player *player1;
     Player *player2;
     Label *name1;
@@ -37,7 +38,7 @@ private:
     Button *exitButton;
     int horizontalMovement{};
     int verticalMovement{};
-void playersMovement(Player* player,char direction,Bomb* bomb= nullptr);
+    void playersMovement(Player* player,char direction,Bomb* bomb= nullptr);
     void addWalls();
 
     void addBoxes();
@@ -65,7 +66,7 @@ protected:
     void keyPressEvent(QKeyEvent *event) override;
 
 public:
-    Game(const QString &, const QString &, QString, const QString&,QString);
+    Game(const QString &, const QString &, const QString&, const QString&,const QString&);
 
     ~Game() override;
 

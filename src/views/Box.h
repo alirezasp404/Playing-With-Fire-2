@@ -8,7 +8,6 @@
 class Box : public Block {
 public:
     bool boxRemoved{false};
-    QTimer* timer;
     Box(int width, int height, int horizontalIndex, int verticalIndex);
 };
 
