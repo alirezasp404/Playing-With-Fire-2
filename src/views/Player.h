@@ -11,8 +11,9 @@ class Player:public QGraphicsPixmapItem{
 public:
     QString name;
     int score{};
+    int bombRadius;
     int lifeCount{};
-    static int speed;
+    int speed;
     int horizontalIndex{};
     int verticalIndex{};
     int horizontalMovement{};

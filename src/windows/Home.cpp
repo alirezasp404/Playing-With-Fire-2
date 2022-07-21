@@ -3,7 +3,7 @@
 #include "Home.h"
 #include "../windows/Game.h"
 
-Home::Home(QString numOfBoxes, QString gameSpeed) {
+Home::Home(QString settings[3]) {
     QString line1, line2, line3;
     QFile file("test.txt");
     if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -19,11 +19,11 @@ Home::Home(QString numOfBoxes, QString gameSpeed) {
     scene->setSceneRect(0, 0, width(), height());
     scene->setBackgroundBrush(QImage(":/images/homeBG"));
     setScene(scene);
-    this->gameSpeed = gameSpeed;
-    this->numOfBoxes = numOfBoxes;
-
-    back= new Background();
-    scene->addItem(back);
+    background= new Background();
+    scene->addItem(background);
+    this->settings[0]=settings[0];
+    this->settings[1]=settings[1];
+    this->settings[2]=settings[2];
 
     firstLabel = new Label();
     firstLabel->setPlainText("First Player Name:");
@@ -39,7 +39,8 @@ Home::Home(QString numOfBoxes, QString gameSpeed) {
     thirdLabel->setPlainText("Number Of Lives:");
     scene->addItem(thirdLabel);
     thirdLabel->setPos(width() / 2.33, height() / 2.55);
-
+    if(line3=="")
+        line3="3";
     numberOfLife = new TextField(200, 55);//textfield3
     numberOfLife->setPlainText(line3);
     scene->addItem(numberOfLife);
@@ -71,9 +72,8 @@ Home::~Home() {
     delete thirdLabel;
     delete numberOfLife;
     delete button;
+    delete background;
     delete scene;
-    delete back;
-
 }
 
 void Home::start() {
@@ -81,7 +81,7 @@ void Home::start() {
     auto name2 = textField2->toPlainText();
     auto numLives = numberOfLife->toPlainText();
     writeFile(textField1->toPlainText(), textField2->toPlainText(), numberOfLife->toPlainText());
-    (new Game(name1, name2, numLives, numOfBoxes,gameSpeed))->show();
+    (new Game(name1, name2, numLives,settings))->show();
     close();
 }
 

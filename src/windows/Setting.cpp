@@ -7,9 +7,9 @@ Setting::Setting() {
     showFullScreen();
     scene = new QGraphicsScene(this);
     scene->setSceneRect(0, 0, width(), height());
-    scene->setBackgroundBrush(QImage(":/images/homeBG"));
     setScene(scene);
-
+    background= new Background();
+    scene->addItem(background);
 
     back = new Button(100,100);
     back->setPlainText(" BACK");
@@ -27,28 +27,41 @@ Setting::Setting() {
     numOfBoxes->setPos(width() / 2.3, height() / 2.3);
 
     label2 = new Label();
-    label2->setPlainText("Game Speed");
+    label2->setPlainText("Speed");
     scene->addItem(label2);
     label2->setPos(width() / 2.33, height() /2);
 
-    gameSpeed = new TextField(200, 55);
-    gameSpeed->setPlainText("1");
-    scene->addItem(gameSpeed);
-    gameSpeed->setPos(width() / 2.3, height() / 1.8);
+    speed = new TextField(200, 55);
+    speed->setPlainText("1");
+    scene->addItem(speed);
+    speed->setPos(width() / 2.3, height() / 1.8);
+
+    label3 = new Label();
+    label3->setPlainText("Bomb Radius");
+    scene->addItem(label3);
+    label3->setPos(width() / 2.33, height() /1.6);
+
+    bombRadius = new TextField(200, 55);
+    bombRadius->setPlainText("2");
+    scene->addItem(bombRadius);
+    bombRadius->setPos(width() / 2.3, height() / 1.45);
 
     connect(back,&Button::press, this,&Setting::backToStart);
 
 }
 Setting::~Setting() {
+    delete background;
     delete scene;
     delete back;
     delete numOfBoxes;
     delete label1;
     delete label2;
-    delete gameSpeed;
+    delete speed;
+    delete label3;
+    delete bombRadius;
 }
 void Setting::backToStart(){
 
-    (new Start(numOfBoxes->toPlainText(),gameSpeed->toPlainText()))->show();
+    (new Start(  numOfBoxes->toPlainText(),speed->toPlainText(),bombRadius->toPlainText()))->show();
     close();
 }

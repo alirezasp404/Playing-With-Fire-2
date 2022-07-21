@@ -32,4 +32,3 @@ void Player::moveToDown() {
 QString Player:: getImage(){
     return Image;
 };
-int Player::speed;

@@ -2,28 +2,21 @@
 #include "Game.h"
 #include<ctime>
 
-Game::Game(const QString &name1, const QString &name2, const QString &lives, const QString &numberOfBoxes,
-           const QString &gameSpeed)
+Game::Game(const QString &name1, const QString &name2, const QString &lives, QString setting[3])
         : QGraphicsView(), numOfWalls(15) {
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     showFullScreen();
     scene = new QGraphicsScene(this);
     scene->setBackgroundBrush(QImage(":/images/gameBG"));
-//    scene->setSceneRect(0, 0, width(), height());
     setScene(scene);
-    Player::speed = gameSpeed.toInt();
-    this->numOfBoxes = numberOfBoxes.toInt();
-    numberOfLives = lives.toInt();
+    this->numOfBoxes = setting[0].toInt();
     horizontalMovement = width() / numOfWalls;
     verticalMovement = height() / numOfWalls;
+    timer = new QTimer;
     addWalls();
     addBoxes();
-    addPlayers();
-    player1->name = name1;
-    player2->name = name2;
-    player1->lifeCount = numberOfLives;
-    player2->lifeCount = numberOfLives;
+    addPlayers(name1, name2, lives.toInt(), setting[2].toInt(), setting[1].toInt());
     showDetails();
     bomb1 = new Bomb(horizontalMovement, verticalMovement, ":/images/bomb1");
     bomb2 = new Bomb(horizontalMovement, verticalMovement, ":/images/bomb2");
@@ -31,12 +24,10 @@ Game::Game(const QString &name1, const QString &name2, const QString &lives, con
 
 Game::~Game() {
     delete scene;
-    for (int i = 0; i < numOfWalls; ++i) {
+    for (int i = 0; i < numOfWalls; ++i)
         delete walls.at(i);
-    }
-    for (int i = 0; i < boxes.size(); ++i) {
+    for (int i = 0; i < boxes.size(); ++i)
         delete boxes.at(i);
-    }
     delete name1;
     delete name2;
     delete player1;
@@ -80,7 +71,6 @@ void Game::addBoxes() {
         } else
             k--;
     }
-    timer = new QTimer;
     connect(timer, &QTimer::timeout, this, &Game::addBoxesOnTimer);
     timer->start(30);
 
@@ -89,8 +79,10 @@ void Game::addBoxes() {
 
 void Game::addBoxesOnTimer() {
     scene->addItem(boxes.at(boxIndex++));
-    if (boxIndex == numOfBoxes)
+    if (boxIndex == numOfBoxes) {
+        disconnect(timer, &QTimer::timeout, this, &Game::addBoxesOnTimer);
         timer->stop();
+    }
 }
 
 bool Game::checkBoxPosition(int i, int j) const {
@@ -113,7 +105,7 @@ void Game::showDetails() {
     name2->setPos(9 * width() / numOfWalls, width() / (numOfWalls * 25));
 
     exitButton = new Button(width() / numOfWalls, height() / numOfWalls);
-    exitButton->setPlainText("     EXIT");
+    exitButton->setPlainText("   EXIT");
     scene->addItem(exitButton);
     exitButton->setPos(7 * width() / numOfWalls, width() / (numOfWalls * 25));
     connect(exitButton, &Button::press, this, &Game::exit);
@@ -139,16 +131,25 @@ void Game::showDetails() {
     life2->setPos(12 * width() / numOfWalls, width() / (numOfWalls * 25));
 }
 
-void Game::addPlayers() {
+void Game::addPlayers(QString name1, QString name2, int numberOfLives, int bombRadius, int speed) {
     player1 = new Player(":/images/player1", horizontalMovement, verticalMovement, 1,
                          1);
     player2 = new Player(":/images/player2", horizontalMovement, verticalMovement, numOfWalls - 2,
                          numOfWalls - 2);
+    player1->name = std::move(name1);
+    player2->name = std::move(name2);
+    player1->lifeCount = numberOfLives;
+    player2->lifeCount = numberOfLives;
+    player1->bombRadius = bombRadius;
+    player2->bombRadius = bombRadius;
+    player1->speed = speed;
+    player2->speed = speed;
     scene->addItem(player1);
     scene->addItem(player2);
 }
 
 void Game::exit() {
+    timer->stop();
     if (player2->lifeCount == 0)
         (new Final(player1, player2))->show();
     else if (player1->lifeCount == 0)
@@ -165,62 +166,59 @@ void Game::exit() {
 void Game::keyPressEvent(QKeyEvent *event) {
     QGraphicsView::keyPressEvent(event);
     //player1 movement
-    if (player1->lifeCount != 0 && player2->lifeCount != 0) {
-        if (boxIndex == numOfBoxes) {
-            if (event->key() == Qt::Key::Key_D)
-                playersMovement(player1, 'R');
-            else if (event->key() == Qt::Key::Key_A)
-                playersMovement(player1, 'L');
-            else if (event->key() == Qt::Key::Key_W)
-                playersMovement(player1, 'U');
-            else if (event->key() == Qt::Key::Key_S)
-                playersMovement(player1, 'D');
-            else if (event->key() == Qt::Key::Key_E) {
-                if (bomb1->bombExploded) {
-                    connect(bomb1->timer, &QTimer::timeout, this, &Game::explodeTime1);
-                    playersMovement(player1, 'B', bomb1);
-                }
-            }
-            //player2 movement
-            if (event->key() == Qt::Key::Key_Right)
-                playersMovement(player2, 'R');
-            else if (event->key() == Qt::Key::Key_Left)
-                playersMovement(player2, 'L');
-            else if (event->key() == Qt::Key::Key_Up)
-                playersMovement(player2, 'U');
-            else if (event->key() == Qt::Key::Key_Down)
-                playersMovement(player2, 'D');
-            else if (event->key() == Qt::Key::Key_Shift) {
-                if (bomb2->bombExploded) {
-                    connect(bomb2->timer, &QTimer::timeout, this, &Game::explodeTime2);
-                    playersMovement(player2, 'B', bomb2);
-                }
+    if (boxIndex == numOfBoxes) {
+        if (event->key() == Qt::Key::Key_D)
+            playersMovement(player1, 'R');
+        else if (event->key() == Qt::Key::Key_A)
+            playersMovement(player1, 'L');
+        else if (event->key() == Qt::Key::Key_W)
+            playersMovement(player1, 'U');
+        else if (event->key() == Qt::Key::Key_S)
+            playersMovement(player1, 'D');
+        else if (event->key() == Qt::Key::Key_E) {
+            if (bomb1->bombExploded) {
+                connect(bomb1->timer, &QTimer::timeout, this, &Game::explodeTime1);
+                playersMovement(player1, 'B', bomb1);
             }
         }
-    } else
-        exit();
+        //player2 movement
+        if (event->key() == Qt::Key::Key_Right)
+            playersMovement(player2, 'R');
+        else if (event->key() == Qt::Key::Key_Left)
+            playersMovement(player2, 'L');
+        else if (event->key() == Qt::Key::Key_Up)
+            playersMovement(player2, 'U');
+        else if (event->key() == Qt::Key::Key_Down)
+            playersMovement(player2, 'D');
+        else if (event->key() == Qt::Key::Key_Shift) {
+            if (bomb2->bombExploded) {
+                connect(bomb2->timer, &QTimer::timeout, this, &Game::explodeTime2);
+                playersMovement(player2, 'B', bomb2);
+            }
+        }
+    }
 }
 
 void Game::playersMovement(Player *player, char direction, Bomb *bomb) {
     if (direction == 'R') {
-        for (int i = 0; i < Player::speed; ++i) {
+        for (int i = 0; i < player->speed; ++i) {
             if (checkMovement(player->horizontalIndex + 1,
                               player->verticalIndex) == -2)
                 player->moveToRight();
         }
     } else if (direction == 'L') {
-        for (int i = 0; i < Player::speed; ++i) {
+        for (int i = 0; i < player->speed; ++i) {
             if (checkMovement(player->horizontalIndex - 1,
                               player->verticalIndex) == -2)
                 player->moveToLeft();
         }
     } else if (direction == 'U') {
-        for (int i = 0; i < Player::speed; ++i) {
+        for (int i = 0; i < player->speed; ++i) {
             if (checkMovement(player->horizontalIndex, player->verticalIndex - 1) == -2)
                 player->moveToUp();
         }
     } else if (direction == 'D') {
-        for (int i = 0; i < Player::speed; ++i) {
+        for (int i = 0; i < player->speed; ++i) {
             if (checkMovement(player->horizontalIndex, player->verticalIndex + 1) == -2)
                 player->moveToDown();
         }
@@ -230,7 +228,7 @@ void Game::playersMovement(Player *player, char direction, Bomb *bomb) {
         bomb->setPos(bomb->horizontalIndex * horizontalMovement + horizontalMovement / 4,
                      bomb->verticalIndex * verticalMovement + verticalMovement / 4);
         scene->addItem(bomb);
-        bomb->timer->start(2000);
+        bomb->timer->start(2000 / player->speed);
         bomb->bombExploded = false;
     }
 }
@@ -265,94 +263,49 @@ void Game::explodeTime1() {
     bomb1->timer->stop();
 }
 
-void Game::removeBoxes(int hIndex, int vIndex, Player *player, Player *enemy) {
-    removeLeftBoxes(hIndex, vIndex, player, enemy);
-    removeRightBoxes(hIndex, vIndex, player, enemy);
-    removeUpBoxes(hIndex, vIndex, player, enemy);
-    removeDownBoxes(hIndex, vIndex, player, enemy);
-    if (player->horizontalIndex == hIndex && player->verticalIndex == vIndex)
+void Game::removeBoxes(int horizontalIndex, int verticalIndex, Player *player, Player *enemy) {
+    if (player->horizontalIndex == horizontalIndex && player->verticalIndex == verticalIndex)
         player->lifeCount--;
-    if (enemy->horizontalIndex == hIndex && enemy->verticalIndex == vIndex) {
+    if (enemy->horizontalIndex == horizontalIndex && enemy->verticalIndex == verticalIndex) {
         enemy->lifeCount--;
         player->score += 50;
+    }
+    int position[4][2]{{-1, 0},//left
+                       {1,  0},//right
+                       {0,  -1},//up
+                       {0,  1}};//down
+    for (int j = 0; j < 4; ++j) {
+        int hIndex = horizontalIndex;
+        int vIndex = verticalIndex;
+        for (int i = 0; i < player->bombRadius; ++i) {
+            hIndex += position[j][0];
+            vIndex += position[j][1];
+            int check = checkMovement(hIndex, vIndex);
+            if (check >= 0) {
+                scene->removeItem(boxes.at(check));
+                delete boxes.at(check);
+                boxes.removeAt(check);
+                player->score += 5;
+            }
+            if (check >= -1)
+                break;
+            if (player->horizontalIndex == hIndex && player->verticalIndex == vIndex)
+                player->lifeCount--;
+            if (enemy->horizontalIndex == hIndex && enemy->verticalIndex == vIndex) {
+                enemy->lifeCount--;
+                player->score += 50;
+            }
+        }
     }
     score1->setPlainText("Score :\t" + QString::number(player1->score));
     life1->setPlainText("Life :\t" + QString::number(player1->lifeCount));
     score2->setPlainText("Score :\t" + QString::number(player2->score));
     life2->setPlainText("Life :\t" + QString::number(player2->lifeCount));
+    if (player1->lifeCount == 0 || player2->lifeCount == 0) {
+        connect(timer, &QTimer::timeout, this, &Game::exit);
+        timer->start(1000);
+    }
 
-}
-
-void Game::removeLeftBoxes(int hIndex, int vIndex, Player *player, Player *enemy, bool checkAgain) {
-    int check = checkMovement(hIndex - 1, vIndex);
-    if (check == -2 && !checkAgain) {
-        removeLeftBoxes(hIndex - 1, vIndex, player, enemy, true);
-    } else if (check >= 0) {
-        scene->removeItem(boxes.at(check));
-        delete boxes.at(check);
-        boxes.removeAt(check);
-        player->score += 5;
-    }
-    if (player->horizontalIndex == hIndex - 1 && player->verticalIndex == vIndex)
-        player->lifeCount--;
-    if (enemy->horizontalIndex == hIndex - 1 && enemy->verticalIndex == vIndex) {
-        enemy->lifeCount--;
-        player->score += 50;
-    }
-}
-
-void Game::removeRightBoxes(int hIndex, int vIndex, Player *player, Player *enemy, bool checkAgain) {
-    int check = checkMovement(hIndex + 1, vIndex);
-    if (check == -2 && !checkAgain) {
-        removeRightBoxes(hIndex + 1, vIndex, player, enemy, true);
-    } else if (check >= 0) {
-        scene->removeItem(boxes.at(check));
-        delete boxes.at(check);
-        boxes.removeAt(check);
-        player->score += 5;
-    }
-    if (player->horizontalIndex == hIndex + 1 && player->verticalIndex == vIndex)
-        player->lifeCount--;
-    if (enemy->horizontalIndex == hIndex + 1 && enemy->verticalIndex == vIndex) {
-        enemy->lifeCount--;
-        player->score += 50;
-    }
-}
-
-void Game::removeUpBoxes(int hIndex, int vIndex, Player *player, Player *enemy, bool checkAgain) {
-    int check = checkMovement(hIndex, vIndex - 1);
-    if (check == -2 && !checkAgain) {
-        removeUpBoxes(hIndex, vIndex - 1, player, enemy, true);
-    } else if (check >= 0) {
-        scene->removeItem(boxes.at(check));
-        delete boxes.at(check);
-        boxes.removeAt(check);
-        player->score += 5;
-    }
-    if (player->horizontalIndex == hIndex && player->verticalIndex == vIndex - 1)
-        player->lifeCount--;
-    if (enemy->horizontalIndex == hIndex && enemy->verticalIndex == vIndex - 1) {
-        enemy->lifeCount--;
-        player->score += 50;
-    }
-}
-
-void Game::removeDownBoxes(int hIndex, int vIndex, Player *player, Player *enemy, bool checkAgain) {
-    int check = checkMovement(hIndex, vIndex + 1);
-    if (check == -2 && !checkAgain) {
-        removeDownBoxes(hIndex, vIndex + 1, player, enemy, true);
-    } else if (check >= 0) {
-        scene->removeItem(boxes.at(check));
-        delete boxes.at(check);
-        boxes.removeAt(check);
-        player->score += 5;
-    }
-    if (player->horizontalIndex == hIndex && player->verticalIndex == vIndex + 1)
-        player->lifeCount--;
-    if (enemy->horizontalIndex == hIndex && enemy->verticalIndex == vIndex + 1) {
-        enemy->lifeCount--;
-        player->score += 50;
-    }
 }
 
 

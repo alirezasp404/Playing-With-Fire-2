@@ -22,11 +22,10 @@ private:
     Label* secondLabel;
     Label* thirdLabel;
     Button* button;
-    QString numOfBoxes;
-    QString gameSpeed;
-    Background* back;
+    QString settings[3];
+    Background* background;
 public:
-    Home(QString numOfBoxes,QString gameSpeed);
+    Home(QString [3]);
     ~Home() override;
     static void writeFile(const QString&,const QString&,const QString&);
 public slots:

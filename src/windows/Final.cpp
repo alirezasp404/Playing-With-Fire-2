@@ -19,7 +19,7 @@ Final::Final(Player *winner, Player *player) {
     winnerName->setPlainText(winner->name + "\nWON");
     scene->addItem(winnerName);
     winnerName->setPos(9*width()/20, height()/2);
-//    14 * width() / 30
+
     playerName1 = new Label(50,"#fe635f");
     playerName1->setPlainText(winner->name);
     scene->addItem(playerName1);
@@ -52,9 +52,11 @@ Final::~Final() {
     delete winnerName;
     delete playerName1;
     delete playerName2;
+    delete playerScore1;
+    delete playerScore2;
     delete finish;
 }
 
 void Final::Finish() {
     close();
-};
+}

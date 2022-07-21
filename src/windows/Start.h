@@ -3,15 +3,13 @@
 #ifndef PLAYING_WITH_FIRE_2_START_H
 #define PLAYING_WITH_FIRE_2_START_H
 #include <QGraphicsView>
-#include <QFile>
-#include <QTextStream>
-#include <string>
 #include "../views/TextField.h"
 #include "../windows/Home.h"
 #include "../windows/Setting.h"
 #include "../windows/Guide.h"
 #include "../views/Button.h"
 #include "../views/Background.h"
+
 
 class Start : public QGraphicsView{
 private:
@@ -20,11 +18,10 @@ private:
     Button* button2;
     Button* button3;
     Button* button4;
-    Background* back;
-    QString numOfBoxes;
-    QString gameSpeed;
+    Background* background;
+    QString settings[3];
 public:
-    Start(QString numOfBoxes="100",QString gameSpeed="1");
+    Start(QString numOfBoxes="100",QString gameSpeed="1",QString bombRadius="2");
     ~Start();
 
 public slots:
