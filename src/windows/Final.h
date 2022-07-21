@@ -18,10 +18,11 @@ public:
 protected:
     QGraphicsScene* scene;
     Button* finish;
-    Player* winnerImage;
     Label* winnerName;
     Label* playerName1;
     Label* playerName2;
+    Label* playerScore1;
+    Label* playerScore2;
 public slots:
     void Finish();
 };

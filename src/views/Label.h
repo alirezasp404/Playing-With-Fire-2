@@ -2,12 +2,14 @@
 #ifndef PLAY_WITH_FIRE_2_LABEL_H
 #define PLAY_WITH_FIRE_2_LABEL_H
 #include <QGraphicsTextItem>
+#include <Qstring>
 
 
 class Label : public QGraphicsTextItem{
 
 public:
     Label();
+    Label(int ,QString);
 };
 
 

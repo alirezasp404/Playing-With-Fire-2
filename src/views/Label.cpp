@@ -12,3 +12,12 @@ Label::Label(): QGraphicsTextItem() {
     document()->setDocumentMargin(10);
 
 }
+Label::Label(int a,QString b="white"): QGraphicsTextItem() {
+    setDefaultTextColor(QColor(b));
+    QFont font;
+    font.setPixelSize(a);
+    font.setBold(true);
+    setFont(font);
+    document()->setDocumentMargin(10);
+
+}

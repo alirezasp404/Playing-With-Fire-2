@@ -113,7 +113,7 @@ void Game::showDetails() {
     name2->setPos(9 * width() / numOfWalls, width() / (numOfWalls * 25));
 
     exitButton = new Button(width() / numOfWalls, height() / numOfWalls);
-    exitButton->setPlainText("   EXIT");
+    exitButton->setPlainText("     EXIT");
     scene->addItem(exitButton);
     exitButton->setPos(7 * width() / numOfWalls, width() / (numOfWalls * 25));
     connect(exitButton, &Button::press, this, &Game::exit);
