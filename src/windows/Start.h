@@ -11,7 +11,7 @@
 #include "../windows/Setting.h"
 #include "../windows/Guide.h"
 #include "../views/Button.h"
-
+#include "../views/Background.h"
 
 class Start : public QGraphicsView{
 private:
@@ -20,6 +20,7 @@ private:
     Button* button2;
     Button* button3;
     Button* button4;
+    Background* back;
     QString numOfBoxes;
     QString gameSpeed;
 public:

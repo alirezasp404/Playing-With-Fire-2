@@ -9,6 +9,7 @@
 #include "../views/TextField.h"
 #include "../views/Label.h"
 #include "../views/Button.h"
+#include "../views/Background.h"
 
 class Home : public QGraphicsView{
 Q_OBJECT
@@ -23,6 +24,7 @@ private:
     Button* button;
     QString numOfBoxes;
     QString gameSpeed;
+    Background* back;
 public:
     Home(QString numOfBoxes,QString gameSpeed);
     ~Home() override;

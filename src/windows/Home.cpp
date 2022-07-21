@@ -22,6 +22,9 @@ Home::Home(QString numOfBoxes, QString gameSpeed) {
     this->gameSpeed = gameSpeed;
     this->numOfBoxes = numOfBoxes;
 
+    back= new Background();
+    scene->addItem(back);
+
     firstLabel = new Label();
     firstLabel->setPlainText("First Player Name:");
     scene->addItem(firstLabel);
@@ -69,6 +72,8 @@ Home::~Home() {
     delete numberOfLife;
     delete button;
     delete scene;
+    delete back;
+
 }
 
 void Home::start() {

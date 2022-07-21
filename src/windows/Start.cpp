@@ -10,8 +10,12 @@ Start::Start(QString numOfBoxes,QString gameSpeed) {
     showFullScreen();
     scene = new QGraphicsScene(this);
     scene->setSceneRect(0, 0, width(), height());
-    scene->setBackgroundBrush(QImage(":/images/homeBG"));
+    scene->setBackgroundBrush(QColor("black"));
     setScene(scene);
+
+    back= new Background();
+    scene->addItem(back);
+
     this->numOfBoxes=std::move(numOfBoxes);
     this->gameSpeed=std::move(gameSpeed);
     button1 = new Button(200,150);
@@ -46,6 +50,8 @@ Start::~Start() {
     delete button3;
     delete button4;
     delete scene;
+    delete back;
+
 }
 void Start::startGame(){
     (new Home(numOfBoxes,gameSpeed))->show();
