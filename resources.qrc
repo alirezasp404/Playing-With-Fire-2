@@ -9,5 +9,6 @@
         <file alias="player2">resources/images/player2.png</file>
         <file alias="bomb">resources/images/bomb.png</file>
         <file alias="explosion">resources/images/explosion.png</file>
+        <file alias="final">resources/images/final.png</file>
     </qresource>
 </RCC>

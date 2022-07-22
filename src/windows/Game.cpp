@@ -104,38 +104,38 @@ bool Game::checkBoxPosition(int i, int j) const {
 }
 
 void Game::showDetails() {
-    name1 = new Label;
+    name1 = new Label(40,"red");
     name1->setPlainText(player1->name);
     scene->addItem(name1);
     name1->setPos(width() / numOfWalls, width() / (numOfWalls * 25));
 
-    name2 = new Label;
+    name2 = new Label(40,"black");
     name2->setPlainText(player2->name);
     scene->addItem(name2);
     name2->setPos(9 * width() / numOfWalls, width() / (numOfWalls * 25));
 
     exitButton = new Button(width() / numOfWalls, height() / numOfWalls);
-    exitButton->setPlainText("   EXIT");
+    exitButton->setPlainText("     EXIT");
     scene->addItem(exitButton);
     exitButton->setPos(7 * width() / numOfWalls, width() / (numOfWalls * 25));
     connect(exitButton, &Button::press, this, &Game::exit);
 
-    score1 = new Label;
+    score1 = new Label(40,"red");
     score1->setPlainText("Score :\t" + QString::number(player1->score));
     scene->addItem(score1);
     score1->setPos(2 * width() / numOfWalls, width() / (numOfWalls * 25));
 
-    life1 = new Label;
+    life1 = new Label(40,"red");
     life1->setPlainText("Life :\t" + QString::number(player1->lifeCount));
     scene->addItem(life1);
     life1->setPos(4 * width() / numOfWalls, width() / (numOfWalls * 25));
 
-    score2 = new Label;
+    score2 = new Label(40,"black");
     score2->setPlainText("Score :\t" + QString::number(player2->score));
     scene->addItem(score2);
     score2->setPos(10 * width() / numOfWalls, width() / (numOfWalls * 25));
 
-    life2 = new Label;
+    life2 = new Label(40,"black");
     life2->setPlainText("Life :\t" + QString::number(player2->lifeCount));
     scene->addItem(life2);
     life2->setPos(12 * width() / numOfWalls, width() / (numOfWalls * 25));

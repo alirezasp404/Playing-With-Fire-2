@@ -5,7 +5,7 @@
 #include "../views/Button.h"
 #include "../views/Label.h"
 #include "../views/Player.h"
-
+#include "../views/FinalBG.h"
 
 class Final :public QGraphicsView{
 public:
@@ -20,6 +20,7 @@ protected:
     Label* playerName2;
     Label* playerScore1;
     Label* playerScore2;
+    FinalBG* background;
 public slots:
     void Finish();
 };
