@@ -7,8 +7,7 @@
 class Label : public QGraphicsTextItem{
 
 public:
-    Label();
-    Label(int ,QString);
+    Label(int size=23,QString color="white");
 
 };
 

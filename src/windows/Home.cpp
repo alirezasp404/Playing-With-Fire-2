@@ -5,7 +5,7 @@
 
 Home::Home(QString settings[3]) {
     QString line1, line2, line3;
-    QFile file("test.txt");
+    QFile file("GameInfo.txt");
     if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QTextStream out(&file);
         out >> line1 >> line2 >> line3;
@@ -79,15 +79,15 @@ Home::~Home() {
 void Home::start() {
     auto name1 = textField1->toPlainText();
     auto name2 = textField2->toPlainText();
-    auto numLives = numberOfLife->toPlainText();
+    auto numOfLives = numberOfLife->toPlainText();
     writeFile(textField1->toPlainText(), textField2->toPlainText(), numberOfLife->toPlainText());
-    (new Game(name1, name2, numLives,settings))->show();
+    (new Game(name1, name2, numOfLives,settings))->show();
     close();
 }
 
 void Home::writeFile(const QString &name1, const QString &name2, const QString &lives) {
 
-    QFile file("test.txt");
+    QFile file("GameInfo.txt");
     if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         QTextStream out(&file);
         out << name1 << "\n" << name2 << "\n" << lives;

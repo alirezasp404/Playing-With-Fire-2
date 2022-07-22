@@ -7,7 +7,6 @@
 
 class Box : public Block {
 public:
-    bool boxRemoved{false};
     Box(int width, int height, int horizontalIndex, int verticalIndex);
 };
 

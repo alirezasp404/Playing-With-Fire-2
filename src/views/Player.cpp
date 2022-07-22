@@ -27,3 +27,6 @@ void Player::moveToDown() {
     setPos(horizontalIndex*horizontalMovement+horizontalMovement/4, (++verticalIndex)*verticalMovement+verticalMovement/4);
     }
 int Player::bombRadius;
+int Player::speed;
+int Player::verticalMovement;
+int Player::horizontalMovement;

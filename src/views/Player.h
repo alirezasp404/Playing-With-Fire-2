@@ -12,12 +12,12 @@ public:
     QString name;
     int score{};
     static int bombRadius;
+    static int speed;
     int lifeCount{};
-    int speed;
     int horizontalIndex{};
     int verticalIndex{};
-    int horizontalMovement{};
-    int verticalMovement{};
+    static int horizontalMovement;
+    static int verticalMovement;
 public:
     Player(const QString& image,int width,int height, int hIndex, int vIndex);
     void moveToRight();
