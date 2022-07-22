@@ -14,12 +14,12 @@ Game::Game(const QString &name1, const QString &name2, const QString &lives, QSt
     horizontalMovement = width() / numOfWalls;
     verticalMovement = height() / numOfWalls;
     timer = new QTimer;
+
     addWalls();
     addBoxes();
     addPlayers(name1, name2, lives.toInt(), setting[2].toInt(), setting[1].toInt());
     showDetails();
-    bomb1 = new Bomb(horizontalMovement, verticalMovement, ":/images/bomb1");
-    bomb2 = new Bomb(horizontalMovement, verticalMovement, ":/images/bomb2");
+    addBomb();
 }
 
 Game::~Game() {
@@ -28,6 +28,9 @@ Game::~Game() {
         delete walls.at(i);
     for (int i = 0; i < boxes.size(); ++i)
         delete boxes.at(i);
+
+    for (int i = 0; i < explosion.size(); ++i)
+        delete explosion.at(i);
     delete name1;
     delete name2;
     delete player1;
@@ -77,6 +80,13 @@ void Game::addBoxes() {
 
 }
 
+
+void Game::addBomb() {
+    bomb1 = new Bomb(horizontalMovement, verticalMovement);
+    bomb2 = new Bomb(horizontalMovement, verticalMovement);
+    for (int i = 0; i < (8 * Player::bombRadius+2); ++i)
+        explosion.append(new Explosion(horizontalMovement, verticalMovement));
+}
 void Game::addBoxesOnTimer() {
     scene->addItem(boxes.at(boxIndex++));
     if (boxIndex == numOfBoxes) {
@@ -140,8 +150,7 @@ void Game::addPlayers(QString name1, QString name2, int numberOfLives, int bombR
     player2->name = std::move(name2);
     player1->lifeCount = numberOfLives;
     player2->lifeCount = numberOfLives;
-    player1->bombRadius = bombRadius;
-    player2->bombRadius = bombRadius;
+    Player::bombRadius = bombRadius;
     player1->speed = speed;
     player2->speed = speed;
     scene->addItem(player1);
@@ -177,7 +186,7 @@ void Game::keyPressEvent(QKeyEvent *event) {
             playersMovement(player1, 'D');
         else if (event->key() == Qt::Key::Key_E) {
             if (bomb1->bombExploded) {
-                connect(bomb1->timer, &QTimer::timeout, this, &Game::explodeTime1);
+                connect(bomb1->bombTimer, &QTimer::timeout, this, &Game::explodeTime1);
                 playersMovement(player1, 'B', bomb1);
             }
         }
@@ -192,7 +201,7 @@ void Game::keyPressEvent(QKeyEvent *event) {
             playersMovement(player2, 'D');
         else if (event->key() == Qt::Key::Key_Shift) {
             if (bomb2->bombExploded) {
-                connect(bomb2->timer, &QTimer::timeout, this, &Game::explodeTime2);
+                connect(bomb2->bombTimer, &QTimer::timeout, this, &Game::explodeTime2);
                 playersMovement(player2, 'B', bomb2);
             }
         }
@@ -228,7 +237,7 @@ void Game::playersMovement(Player *player, char direction, Bomb *bomb) {
         bomb->setPos(bomb->horizontalIndex * horizontalMovement + horizontalMovement / 4,
                      bomb->verticalIndex * verticalMovement + verticalMovement / 4);
         scene->addItem(bomb);
-        bomb->timer->start(2000 / player->speed);
+        bomb->bombTimer->start(2000 / player->speed);
         bomb->bombExploded = false;
     }
 }
@@ -249,21 +258,28 @@ void Game::explodeTime2() {
     if (!bomb2->bombExploded) {
         scene->removeItem(bomb2);
         bomb2->bombExploded = true;
-        removeBoxes(bomb2->horizontalIndex, bomb2->verticalIndex, player2, player1);
+        connect(bomb2->explosionTimer, &QTimer::timeout, this, &Game::removeExplosion2);
+        bomb2->explosionIndex=explosion.size()/2;
+        removeBoxes(bomb2->horizontalIndex, bomb2->verticalIndex, player2, player1,bomb2);
     }
-    bomb2->timer->stop();
+    bomb2->bombTimer->stop();
 }
 
 void Game::explodeTime1() {
     if (!bomb1->bombExploded) {
         scene->removeItem(bomb1);
         bomb1->bombExploded = true;
-        removeBoxes(bomb1->horizontalIndex, bomb1->verticalIndex, player1, player2);
+        connect(bomb1->explosionTimer, &QTimer::timeout, this, &Game::removeExplosion1);
+        bomb1->explosionIndex=0;
+        removeBoxes(bomb1->horizontalIndex, bomb1->verticalIndex, player1, player2,bomb1);
     }
-    bomb1->timer->stop();
+    bomb1->bombTimer->stop();
 }
 
-void Game::removeBoxes(int horizontalIndex, int verticalIndex, Player *player, Player *enemy) {
+void Game::removeBoxes(int horizontalIndex, int verticalIndex, Player *player, Player *enemy,Bomb* bomb) {
+    explosion.at(bomb->explosionIndex)->setPos(horizontalIndex * horizontalMovement + horizontalMovement / 4,
+                                         verticalIndex * verticalMovement + verticalMovement / 4);
+    scene->addItem(explosion.at(bomb->explosionIndex++));
     if (player->horizontalIndex == horizontalIndex && player->verticalIndex == verticalIndex)
         player->lifeCount--;
     if (enemy->horizontalIndex == horizontalIndex && enemy->verticalIndex == verticalIndex) {
@@ -277,18 +293,27 @@ void Game::removeBoxes(int horizontalIndex, int verticalIndex, Player *player, P
     for (int j = 0; j < 4; ++j) {
         int hIndex = horizontalIndex;
         int vIndex = verticalIndex;
-        for (int i = 0; i < player->bombRadius; ++i) {
+        for (int i = 0; i < Player::bombRadius; ++i) {
             hIndex += position[j][0];
             vIndex += position[j][1];
             int check = checkMovement(hIndex, vIndex);
-            if (check >= 0) {
+            if (check == -1)
+                break;
+            else if (check == -2) {
+                explosion.at(bomb->explosionIndex)->setPos(hIndex * horizontalMovement + horizontalMovement / 4,
+                                                     vIndex * verticalMovement + verticalMovement / 4);
+                scene->addItem(explosion.at(bomb->explosionIndex++));
+            } else if (check >= 0) {
+                explosion.at(bomb->explosionIndex)->setPos(hIndex * horizontalMovement + horizontalMovement / 4,
+                                                     vIndex * verticalMovement + verticalMovement / 4);
+                scene->addItem(explosion.at(bomb->explosionIndex++));
                 scene->removeItem(boxes.at(check));
                 delete boxes.at(check);
                 boxes.removeAt(check);
                 player->score += 5;
-            }
-            if (check >= -1)
                 break;
+            }
+
             if (player->horizontalIndex == hIndex && player->verticalIndex == vIndex)
                 player->lifeCount--;
             if (enemy->horizontalIndex == hIndex && enemy->verticalIndex == vIndex) {
@@ -297,6 +322,7 @@ void Game::removeBoxes(int horizontalIndex, int verticalIndex, Player *player, P
             }
         }
     }
+    bomb->explosionTimer->start(1000);
     score1->setPlainText("Score :\t" + QString::number(player1->score));
     life1->setPlainText("Life :\t" + QString::number(player1->lifeCount));
     score2->setPlainText("Score :\t" + QString::number(player2->score));
@@ -307,6 +333,21 @@ void Game::removeBoxes(int horizontalIndex, int verticalIndex, Player *player, P
     }
 
 }
+
+void Game::removeExplosion1() {
+    bomb1->explosionTimer->stop();
+    disconnect(bomb1->explosionTimer, &QTimer::timeout, this, &Game::removeExplosion1);
+    for (int i = 0; i < bomb1->explosionIndex; ++i)
+        scene->removeItem(explosion.at(i));
+}
+void Game::removeExplosion2() {
+    bomb2->explosionTimer->stop();
+    disconnect(bomb2->explosionTimer, &QTimer::timeout, this, &Game::removeExplosion2);
+    for (int i = explosion.size()/2; i < bomb2->explosionIndex; ++i)
+        scene->removeItem(explosion.at(i));
+}
+
+
 
 
 

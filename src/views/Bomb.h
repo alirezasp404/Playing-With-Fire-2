@@ -12,9 +12,11 @@ public:
     int horizontalIndex;
     int verticalIndex;
     bool bombExploded{true};
-    Bomb(int width,int height,const QString& bombImage);
+    QTimer* explosionTimer;
+    int explosionIndex{0};
+    Bomb(int width,int height);
     ~Bomb();
-    QTimer* timer;
+    QTimer* bombTimer;
 };
 
 

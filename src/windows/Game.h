@@ -13,6 +13,7 @@
 #include "../views/Label.h"
 #include "../views/Player.h"
 #include "../windows/Final.h"
+#include "../views/Explosion.h"
 #include <QKeyEvent>
 
 class Game : public QGraphicsView {
@@ -34,6 +35,7 @@ private:
     Label* life2{};
     Bomb *bomb1;
     Bomb *bomb2;
+    QList<Explosion*>explosion;
     Button *exitButton{};
     int horizontalMovement{};
     int verticalMovement{};
@@ -42,13 +44,14 @@ private:
 
     void addBoxes();
 
+    void addBomb();
     void addPlayers(QString,QString,int,int,int);
 
     bool checkBoxPosition(int i, int j) const;
 
     int checkMovement(int horizontalIndex, int verticalIndex) const;
 
-    void removeBoxes(int hIndex, int vIndex,Player* player,Player* enemy);
+    void removeBoxes(int hIndex, int vIndex,Player* player,Player* enemy,Bomb* bomb);
 
     void showDetails();
 
@@ -67,7 +70,8 @@ public slots:
     void explodeTime1();
 
     void explodeTime2();
-
+void removeExplosion1();
+void removeExplosion2();
     void exit();
 };
 

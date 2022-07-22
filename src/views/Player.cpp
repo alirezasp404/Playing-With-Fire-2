@@ -8,7 +8,6 @@ Player::Player(const QString& image, int width, int height, int hIndex, int vInd
     horizontalMovement = width;
     verticalMovement = height;
     setPos(hIndex*horizontalMovement+horizontalMovement/4, vIndex*verticalMovement+verticalMovement/4);
-    Image=image;
 }
 
 
@@ -27,8 +26,4 @@ void Player::moveToUp() {
 void Player::moveToDown() {
     setPos(horizontalIndex*horizontalMovement+horizontalMovement/4, (++verticalIndex)*verticalMovement+verticalMovement/4);
     }
-
-
-QString Player:: getImage(){
-    return Image;
-};
+int Player::bombRadius;
